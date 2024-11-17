@@ -1,0 +1,36 @@
+fieldLayouts:
+  bb62b1d7-5fbd-434e-88ee-bd902d551bc9:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 2a0e60f6-18d1-4fd2-bd57-a5cb0674f933 # Columns
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d35b085d-56bf-4d96-b9ec-2dcfd8eda89b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ff2edefb-7b23-49ec-8722-105edb031ff5 # Copyright
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3397dd44-5fd8-488c-9507-737b12d3ae1f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: fb3f4553-9ce5-406c-978b-e902d2f86892
+        userCondition: null
+handle: footer
+name: Footer
+sortOrder: 2

@@ -1,0 +1,43 @@
+fieldLayouts:
+  143e19b0-8163-4f5d-9815-8c9efec9a40e:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: e59cf804-301b-4cdb-9fbc-1e3bf8e5ebda
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 86a5fd0e-7e9e-4acc-af52-7a00755451c2
+        userCondition: null
+handle: theologicalThemes
+hasTitleField: false
+name: 'Theological Themes'
+section: 15701697-5014-41ec-b0db-6f8f9be88ce8 # Theological Themes
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

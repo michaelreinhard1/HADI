@@ -1,0 +1,266 @@
+dateModified: 1674136261
+elementSources:
+  craft\elements\User:
+    -
+      defaultSort:
+        - username
+        - asc
+      disabled: false
+      key: '*'
+      tableAttributes:
+        - fullName
+        - email
+        - dateCreated
+        - lastLoginDate
+      type: native
+    -
+      heading: 'Account Type'
+      type: heading
+    -
+      defaultSort:
+        - username
+        - asc
+      disabled: false
+      key: 'group:c63fb602-dd40-4e61-939a-17a63d510957' # Administrators
+      tableAttributes:
+        - fullName
+        - email
+        - dateCreated
+        - lastLoginDate
+      type: native
+    -
+      defaultSort:
+        - username
+        - asc
+      disabled: false
+      key: 'group:db25ddee-b3b4-4771-aa7f-2989841d0e0b' # Students
+      tableAttributes:
+        - fullName
+        - email
+        - dateCreated
+        - lastLoginDate
+      type: native
+    -
+      defaultSort:
+        - username
+        - asc
+      disabled: false
+      key: 'group:206700cc-0e8b-40af-a8a5-6ae491439cea' # Readers
+      tableAttributes:
+        - fullName
+        - email
+        - dateCreated
+        - lastLoginDate
+      type: native
+    -
+      heading: 'Account Status'
+      type: heading
+    -
+      defaultSort:
+        - username
+        - asc
+      disabled: false
+      key: credentialed
+      tableAttributes:
+        - fullName
+        - email
+        - dateCreated
+        - lastLoginDate
+      type: native
+    -
+      defaultSort:
+        - username
+        - asc
+      disabled: false
+      key: inactive
+      tableAttributes:
+        - fullName
+        - email
+        - dateCreated
+        - lastLoginDate
+      type: native
+    -
+      heading: 'Control Panel'
+      type: heading
+    -
+      defaultSort:
+        - username
+        - asc
+      disabled: false
+      key: admins
+      tableAttributes:
+        - fullName
+        - email
+        - dateCreated
+        - lastLoginDate
+      type: native
+email:
+  fromEmail: xulobeats@gmail.com
+  fromName: HADI
+  replyToEmail: xulobeats@gmail.com
+  template: ''
+  transportSettings:
+    encryptionMethod: none
+    host: localhost
+    password: ''
+    port: '1025'
+    timeout: '10'
+    useAuthentication: '0'
+    username: ''
+  transportType: craft\mail\transportadapters\Smtp
+fs:
+  uploads:
+    hasUrls: true
+    name: Uploads
+    settings:
+      path: '@webroot/uploads'
+    type: craft\fs\Local
+    url: '@web/uploads'
+meta:
+  __names__:
+    0a09dc8f-570e-4dba-8336-2b623c5011eb: Default # Default
+    0b24fe50-2f09-441a-9623-808c2d9d6a3a: 'Button Text' # Button Text
+    0bfb8de4-3894-4bd8-a3ad-405b978fb36d: 'Menu Items' # Menu Items
+    0c8cff9f-0e71-4f85-a556-49c8f84de228: Mission # Mission
+    0cd6dfa1-a6a0-4163-8256-ccc5067bc23c: 'Theme Type' # Theme Type
+    0d498f95-e563-4349-ac44-6573d3e63c4f: Placeholder # Placeholder
+    0ddbde94-92c5-486a-a374-a0da47f96b69: Label # Label
+    0f523942-0a6c-4131-aa73-4e6bf8e99b7c: Home # Home
+    1e680a5e-1fac-45de-9d3e-7e2f835bd087: 'Form Description' # Form Description
+    2a0e60f6-18d1-4fd2-bd57-a5cb0674f933: Columns # Columns
+    2a4112f1-31a0-4cca-bd0f-498fcf2d24ef: Description # Description
+    2c8d0883-eb20-49d4-97e0-f2951a3aa9cb: Categories # Categories
+    3a5a81b7-b08f-445f-b7b1-147db25b2321: Register # Register
+    3e48bd78-6f31-4ced-a127-66715e2f0349: Hero # Hero
+    4ac7cdc0-4143-463d-bfcf-5f5a2e6804d6: 'Header Reader' # Header Reader
+    4ad5a614-03d2-4478-8c46-dd11a3377ae4: 'Text Field' # Text Field
+    4c0be0c3-a64e-4787-85a6-c7308f8a9a08: 'Reset Password' # Reset Password
+    5bd2fd26-3c9c-48ff-81dc-b116b376767b: 'Upload add navigation' # Upload add navigation
+    5fe6059a-749c-41ad-8629-c91692e4cb87: 'Form Title' # Form Title
+    6e4e02fa-6532-41b9-a528-cc38edac7e5e: 'Section Description' # Section Description
+    6ed62dde-3410-42fd-a3ea-7d36616ddca5: 'Theological Themes' # Theological Themes
+    6f76cc44-1a4d-436c-a06c-9deae4f0efde: 'Register Link Text' # Register Link Text
+    7bbb546a-74d5-4ba0-bd40-6f32de6ffa39: Profile # Profile
+    8afc8884-5279-4904-948f-f558fa630bb9: 'Column Title' # Column Title
+    8c363541-4c0c-44d4-bd64-ac06090b04e9: Themes # Themes
+    8e89bfc8-0a9e-404c-af5f-c3fe2a6d28ba: 'Content Type Title' # Content Type Title
+    26e77a68-8ff8-4d60-a6de-a18f376613fa: 'Footer Link' # Footer Link
+    30bdced0-2339-4dc8-bc89-9bc5d3913030: 'ID for label' # ID for label
+    38bfd440-a245-41ce-938b-c8f6fc6b5a21: Themes # Themes
+    44aee174-7f3e-4ebb-a846-0b2843a3f671: Article # Article
+    46c6bd9b-d036-49cb-be1f-8a16b18032a5: 'Sub Menu' # Sub Menu
+    49dbaef8-c6db-4768-8881-b206d6833eef: 'Public Schema' # Public Schema
+    50ad4dca-03ff-4766-8587-82cedb2c8737: Menu # Menu
+    65ea9303-bbd2-422a-ae19-a886de8e8f50: Form # Form
+    76edcb64-ac57-45bb-a955-7ac3d0b84ab7: 'Mission Title' # Mission Title
+    78ede8e3-62a7-447b-bb83-89a3b8e49115: 'Mission Link Text' # Mission Link Text
+    079c9584-ab1b-423d-bc1f-9d10417a9b63: Placeholder # Placeholder
+    81a5a36e-204f-411d-bf8b-350125721be3: Destination # Destination
+    81a33e05-6a4c-4bc6-bef1-5eb86d00eb02: 'Button Link' # Button Link
+    98ddeb5b-3a4b-4a32-80e8-97c1e379939e: 'Password Label' # Password Label
+    452fd91b-e451-4de5-bd86-717ac4c9fa57: Themes # Themes
+    517e858f-2f9d-43d0-bf99-59c2e646a41a: Hero # Hero
+    663daeb7-a1d1-4361-a762-b785dcffdb2d: 'ID for label' # ID for label
+    689dcc51-e441-454a-ba85-d22adf875ac7: 'General Theme Title' # General Theme Title
+    693ea570-7c45-4f76-9618-2598d8a1e10d: 'Mission Heading' # Mission Heading
+    0933b34d-6a7b-4800-a6e8-6524088d7595: 'Email Field' # Email Field
+    976f3618-23d8-4440-b4cc-95201a174320: 'Google slides' # Google slides
+    999e607e-af0d-457e-a334-85109cca44ca: 'Sub Title' # Sub Title
+    1208a6b5-a496-4d17-8c39-e5b540eb074b: 'Theme Name' # Theme Name
+    1210b0a0-212c-46e9-a558-c6b3a635ec4d: 'Section Title' # Section Title
+    4695bff9-1152-407f-a060-ed39c36523fa: 'Theme name' # Theme name
+    8126c0e0-f5e3-42a1-aea6-8f54c11547e9: Title # Title
+    8643c5fb-00e9-456f-bdee-7e89d6e5952b: Uploads # Uploads
+    9521fa36-84ad-49d7-b343-9d655e051643: onderwijsplatform # onderwijsplatform
+    021890c4-8145-4643-82ff-22a73f9dbb9e: 'Theme Icon' # Theme Icon
+    72006fb8-890e-4f87-a08b-43294240ce8f: Placeholder # Placeholder
+    79988fe9-7718-4316-9679-039fdc6f30f9: 'Site title' # Site title
+    99446bc6-a4f6-4fd3-b950-a7a38cbdfdbf: Home # Home
+    120072da-8bbd-401b-b061-021b5cb16536: 'My Articles' # My Articles
+    206700cc-0e8b-40af-a8a5-6ae491439cea: Readers # Readers
+    0209121a-6c25-446c-adcb-8a841e020309: 'Sub Menu Item' # Sub Menu Item
+    472767ee-50e8-4926-acf8-610907c98e59: 'Theological Themes' # Theological Themes
+    605209a1-5b98-4d6b-846e-bf09aee1fec7: 'Email Label' # Email Label
+    984198d8-ac80-4e55-a662-630c9f8d7396: 'Content Type' # Content Type
+    15701697-5014-41ec-b0db-6f8f9be88ce8: 'Theological Themes' # Theological Themes
+    16139002-d0bf-4b12-9fc0-9e7d2c1c8a60: 'Footer Column' # Footer Column
+    49580992-cb11-4ad7-8711-92ff151f2e10: 'Mission Title' # Mission Title
+    52182910-0b97-4a6d-b309-a6933fe46dff: Label # Label
+    87029079-a4e2-42cf-acce-ed5218a3fc22: 'Mission Image' # Mission Image
+    89229979-5c86-4bd4-8026-a44680d5e758: 'Register Link' # Register Link
+    a42ef1db-cc8a-473e-9455-1eed3fed529e: 'Login Email Error' # Login Email Error
+    a48fd6de-bfee-4477-aa99-727739ab9c45: 'Text Area' # Text Area
+    a91d099e-b6fb-4970-b320-bb754c515fd2: Login # Login
+    a401f8c5-31e5-4b31-bb0e-d608f73c2926: Login # Login
+    a543bddb-366c-4a10-9ac3-5886a28a55a6: Login # Login
+    a2721472-5a54-4d30-b1e3-fcca807c117c: Footer # Footer
+    b0c6aaec-0ae0-46dd-b41f-12d5f272b494: Label # Label
+    b1a02b8d-afc1-497a-9d65-4aa04a261771: Upload # Upload
+    b2d16f76-a8d7-4947-9033-a6208d319529: 'Content Type' # Content Type
+    b3e8fa6e-0729-4be7-8b0b-5605c112d8d9: Profile # Profile
+    b5d20afa-510b-43b2-b499-f1b7fb14bc42: 'Email Placeholder' # Email Placeholder
+    b12a7bfb-1b71-421b-a93f-fe212e38027a: Image # Image
+    b113bfca-e8da-444d-a549-ff90f00d06d9: Entry # Entry
+    b675f327-d46d-443a-a6c8-5c67fbe301ae: Links # Links
+    b729ebe4-ef74-47c4-9328-0b9b0356859c: Common # Common
+    b2649253-f8ee-4d24-81a5-90f424f599d6: 'Mission Link' # Mission Link
+    bc111563-9715-46fb-9e0c-ff25422d3757: Register # Register
+    bd5cde3e-aace-43dc-8675-68a5df29b825: 'Button Text' # Button Text
+    bdd11199-dd65-48d9-b75a-f9229fd8209c: 'Mission Description' # Mission Description
+    bf298d28-43cd-4d5d-886f-ab24108edebc: 'Theme Icon' # Theme Icon
+    c09db5cc-2e66-47b6-bd5f-a9110cf8ea09: Mission # Mission
+    c8e11b39-2e62-4fba-9676-92af69823e02: 'Forgot Password Link' # Forgot Password Link
+    c46ba9dd-35c7-402e-879d-61774c13275d: Footer # Footer
+    c63fb602-dd40-4e61-939a-17a63d510957: Administrators # Administrators
+    c96a5b13-79be-42c4-b261-d8f5a2b777a2: Upload # Upload
+    c98e80dd-7001-4c0d-bd4e-fbb08b154d0b: 'Reset Password' # Reset Password
+    cb4afc56-e9f5-4813-94e3-cac88757cdbf: 'Theological Themes Title' # Theological Themes Title
+    cd4006c9-3b5f-4ff9-a9cb-08057ee6d590: 'Header Student' # Header Student
+    ce6e23f6-d4e3-41b3-9fa4-db83ddf1d165: 'ID for label' # ID for label
+    cebf290d-d3b9-4f42-bc46-d63ff228185e: 'My Articles' # My Articles
+    da71160f-aa7f-419d-b506-dcb2151d5704: Body # Body
+    db5dbdf1-3ffa-4332-9147-e55f62279272: 'Upload add navigation' # Upload add navigation
+    db25ddee-b3b4-4771-aa7f-2989841d0e0b: Students # Students
+    de9adf7f-6fe6-4483-b882-eed90f12fddf: HADI # HADI
+    de2374a1-8e08-42a6-8e28-96fb6c589a10: Themes # Themes
+    e016810c-1ace-474c-ad31-2ab30604081b: 'Register Text' # Register Text
+    e2ca303d-fa2f-409a-a087-c0300797fd85: Label # Label
+    e9a0dda1-8ce6-4008-b16d-e0b920f8180a: 'Remember Me Text' # Remember Me Text
+    e225f523-cd71-4f13-9a93-b9e8156ad962: Login # Login
+    ebb7ab24-cf75-4119-9e14-c6c635f948c7: Image # Image
+    ecaf28c4-19fc-4e6b-87b3-4a258df131df: 'Theme Type' # Theme Type
+    efd7e889-8118-484d-a63e-04f4864c9478: Missions # Missions
+    f055d6bc-6ae4-489d-bca8-d1293a9e48fa: 'Forgot Password Text' # Forgot Password Text
+    f431dc5a-5811-4a28-9fb4-99a491e186b0: Title # Title
+    f5072e2e-b8a8-4207-a654-4b2f7fc501d2: 'Buton Text' # Buton Text
+    fbf371bf-9c4b-4268-b2a2-0c0960f40565: Button # Button
+    fbfb9221-6cc1-46b0-95f8-de84a825f28f: Login # Login
+    ff0c143e-6aa4-4d4c-954a-fa5c1d0ceee9: 'Homepage Header' # Homepage Header
+    ff2edefb-7b23-49ec-8722-105edb031ff5: Copyright # Copyright
+plugins:
+  contact-form:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      allowAttachments: ''
+      allowedMessageFields: null
+      prependSender: 'On behalf of'
+      prependSubject: 'New message from onderwijsplatform'
+      successFlashMessage: 'Your message has been sent.'
+      toEmail: xulobeats@gmail.com
+  dumper:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+system:
+  edition: pro
+  live: true
+  name: onderwijsplatform
+  retryDuration: null
+  schemaVersion: 4.0.0.9
+  timeZone: America/Los_Angeles

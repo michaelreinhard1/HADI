@@ -1,0 +1,99 @@
+{% extends "_layouts/base.twig" %}
+
+{% block title %}
+	{{parent()}}
+	-
+	{{ entry.title }}
+{% endblock %}
+
+{% requireLogin %}
+
+{% block body %}
+
+	<div class="relative">
+
+		{% if entry.parentId %}
+			{% if craft.entries.id(entry.parentId).one().image.one() is not null %}
+				{% set image = craft.entries.id(entry.parentId).one().image.one() %}
+			{% else %}
+				{% set image = craft.assets.filename('image-placeholder.webp').one() %}
+			{% endif %}
+		{% else %}
+			{% if entry.image.one() is not null %}
+				{% set image = entry.image.one() %}
+			{% else %}
+				{% set image = craft.assets.filename('image-placeholder.webp').one() %}
+			{% endif %}
+		{% endif %}
+
+		{% set image = image.getUrl() %}
+
+		<img src="{{image}}" class="w-full h-80 object-cover object-center" alt="{{entry.title}}">
+		<div class="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+		<h1 class="font-extrabold text-white text-4xl my-5 absolute top-1/2 left-1/2 origin-center -translate-y-1/2 -translate-x-1/2">
+			{{ entry.title }}
+		</h1>
+		{% if entry.parentId %}
+			{% set slug = craft.entries.id(entry.parentId).one().slug %}
+			{% set url = url('upload-add-navigation?slug=' ~ slug ~ '&item=' ~ entry.id) %}
+		{% else %}
+			{% set slug = entry.slug %}
+			{% set url = url('upload?slug=' ~ slug) %}
+		{% endif %}
+		{% if currentUser.admin or currentUser.isInGroup('administrators') or entry.authorId == currentUser.id %}
+			<a href="{{ url }}" class="text-blue-500 hover:text-blue-700 text-center py-5 flex justify-center items-center absolute top-0 right-0 w-full h-full bg-white w-fit h-fit px-8">
+				Bewerk deze pagina
+				<span class="material-symbols-outlined ml-4">
+					edit
+				</span>
+			</a>
+		{% endif %}
+	</div>
+	{% set parentId = entry.parentId %}
+	{% set items = craft.entries.section('article').descendantOf(entry.id).all() %}
+	{% if parentId is not null %}
+		{% set items = craft.entries.section('article').descendantOf(parentId).all() %}
+	{% endif %}
+	{% if items|length > 0 %}
+		<div class="mb-5 bg-gray-50 border-b border-t border-gray-200 py-8">
+			<ul class="container flex flex-col  rounded-lg md:flex-row md:space-x-8 md:mt-0 md:font-medium md:border-0">
+				<li>
+					<a href="{{ parentId ? craft.entries.id(parentId).one().url : entry.url }}" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 font-bold {% if parentId is null %} text-blue-700 {% endif %}">
+						{{ parentId ? craft.entries.id(parentId).one().title : entry.title }}
+					</a>
+					{% for item in items %}
+						<li>
+							<a href="{{item.url}}" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 font-bold {% if item.id == entry.id %} text-blue-700 {% endif %}">
+								{{item.title}}
+							</a>
+						</li>
+					{% endfor %}
+				</li>
+			</ul>
+		</div>
+	{% endif %}
+	<div class="container mx-auto my-10 ">
+		<div>
+			<div class=" mt-2 leading-relaxed ">
+				<p>
+					{{ entry.body }}
+				</p>
+			</div>
+		</div>
+	</div>
+
+	{% if entry.googleSlides %}
+
+		<div class=" mt-2 text-center">
+			<a href="{{entry.googleSlides}}/preview" target="_blank" class="text-blue-500  hover:text-blue-700 hover:underline text-center my-5 flex justify-center items-center">
+				Open in new tab
+				<span class="material-symbols-outlined">
+					open_in_new
+				</span>
+			</a>
+		</div>
+		<iframe class="w-10/12 h-screen border-0 mt-2 mx-auto" src="{{entry.googleSlides}}/embed"></iframe>
+
+	{% endif %}
+
+</div>{% endblock %}

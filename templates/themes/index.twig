@@ -1,0 +1,59 @@
+{% extends "_layouts/base.twig" %}
+
+{% block title %}
+	{{parent()}}
+	-
+																																			Thema's en dossiers
+{% endblock %}
+
+{% block body %}
+
+	{% requireLogin %}
+
+
+	{% set themes = craft.categories.group('themes').themeType(1644).all() %}
+
+	{% set theologicalThemes = craft.categories.group('themes').themeType(1645).all() %}
+
+	{% set contentTypes = craft.categories.group('contentType').all() %}
+
+	<!-- General Themes -->
+
+	<div class="md:my-10">
+		<h1 class="font-bold text-2xl md:text-4xl text-center my-5">Algemene thema's</h1>
+		<div class="container mx-auto my-10 md:mt-20 grid md:grid-cols-4 grid-cols-1 md:gap-8 gap-2 justify-center">
+			{% for theme in themes %}
+				{% include "_partials/theme.twig" with {
+              theme: theme,
+          } %}
+			{% endfor %}
+		</div>
+	</div>
+
+	<!-- Theological Themes -->
+
+	<div class="md:my-10">
+		<h1 class="font-bold text-2xl md:text-4xl text-center my-5">Theologische thema's</h1>
+		<div class="container mx-auto my-10 md:mt-20 grid md:grid-cols-4 grid-cols-1 md:gap-8 gap-2 justify-center">
+			{% for theme in theologicalThemes %}
+				{% include "_partials/theme.twig" with {
+																		theme: theme,
+																} %}
+			{% endfor %}
+		</div>
+	</div>
+
+	<!-- Content Types -->
+
+	<div class="md:my-10">
+		<h1 class="font-bold text-2xl md:text-4xl text-center my-5">Content type</h1>
+		<div class="container mx-auto my-10 md:mt-20 grid md:grid-cols-4 grid-cols-1 md:gap-8 gap-2 justify-center">
+			{% for type in contentTypes %}
+				{% include "_partials/theme.twig" with {
+            theme: type,
+        } %}
+			{% endfor %}
+		</div>
+	</div>
+
+{% endblock %}

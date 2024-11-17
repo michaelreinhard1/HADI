@@ -1,0 +1,90 @@
+{% extends "_layouts/base.twig" %}
+
+{% block title %}
+	{{parent()}}
+	-
+															Mijn artikelen
+{% endblock %}
+
+{% requireLogin %}
+
+{% if currentUser.isInGroup('readers')%}
+	{% redirect url('404')%}
+{% endif %}
+
+{% block body %}
+
+
+	<div class="md:my-20 container mx-auto">
+		<h1 class="font-bold text-2xl md:text-4xl text-center">
+			Mijn artikelen
+		</h1>
+
+		{% set themes = craft.categories.group('themes').themeType(1644).all() %}
+
+		{% set theologicalThemes = craft.categories.group('themes').themeType(1645).all() %}
+
+		{% set filter = craft.app.request.getQueryParam('filter') %}
+
+		{% set articleType = null %}
+
+
+		<div class="flex justify-center my-14 border border-gray-300 h-full text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-fit p-2.5">
+
+			{% if themes %}
+
+				<select class="mr-4" onchange="filter(this.value);">
+					<option value="" class=" shadow-md hover:shadow-lg transition-all rounded-full px-6 py-3 block text-sm {% if not filter %}bg-blue-500 text-white{% endif %}">Alles</option>
+					<option value="" disabled></option>
+					<option value="" disabled class="font-bold text-black">Algemene thema's</option>
+					{% for theme in themes %}
+						{% if filter == theme %}
+							{% set articleType = theme %}
+						{% endif %}
+						<option value="{{ theme.id }}" class=" shadow-md hover:shadow-lg transition-all rounded-full px-6 py-3 block text-sm " {% if filter == theme.id %} selected {% endif %}>
+							{{ theme.title }}
+						</option>
+					{% endfor %}
+					<option value="" disabled></option>
+					<option value="" disabled class="font-bold text-black">Theologische thema's</option>
+					{% for theme in theologicalThemes %}
+						{% if filter == theme %}
+							{% set articleType = theme %}
+						{% endif %}
+						<option value="{{ theme.id }}" class=" shadow-md hover:shadow-lg transition-all rounded-full px-6 py-3 block text-sm " {% if filter == theme.id %} selected {% endif %}>
+							{{ theme.title }}
+						</option>
+					{% endfor %}
+				</select>
+
+
+			{% endif %}
+
+		</div>
+
+		{% set articles = craft.entries.section('article').authorId(currentUser.id).level(1).all() %}
+
+		{# {% set articles = craft.entries.section('article').themes(category).all() %} #}
+
+		{% if filter %}
+
+			{% set theme = craft.categories.id(filter).one() %}
+
+			{% set articles = craft.entries().section('article').authorId(currentUser.id).level(1).themes(filter) %}
+
+		{% endif %}
+
+		{% if articles|length == 0 or articles == null %}
+
+			<div class="text-center text-md mt-20">Geen artikelen gevonden</div>
+
+		{% else %}
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-4 gap-y-10 h-full mb-10">
+				{% for article in articles %}
+					{% include "_partials/article"%}
+				{% endfor %}
+			</div>
+		{% endif %}
+	</div>
+	{% js '@web/assets/js/articles-filter.js' %}
+{% endblock %}

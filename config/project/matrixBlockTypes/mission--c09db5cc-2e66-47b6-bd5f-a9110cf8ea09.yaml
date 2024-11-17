@@ -1,0 +1,224 @@
+field: efd7e889-8118-484d-a63e-04f4864c9478 # Missions
+fieldLayouts:
+  32e290f6-7e40-4175-a043-523b318a8725:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 693ea570-7c45-4f76-9618-2598d8a1e10d # Mission Heading
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 04dcd70e-eff9-4d50-9cd3-51ec5e57eee7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: bdd11199-dd65-48d9-b75a-f9229fd8209c # Mission Description
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6d51f82c-87ea-4603-82e3-ed277c83c534
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 87029079-a4e2-42cf-acce-ed5218a3fc22 # Mission Image
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8f4f2471-a907-4a9d-901e-fcb24d2e423f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 78ede8e3-62a7-447b-bb83-89a3b8e49115 # Mission Link Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c95b2c98-e52a-48ff-a0b0-02e9ec6808de
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: b2649253-f8ee-4d24-81a5-90f424f599d6 # Mission Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f8ee2c47-74d0-4336-be35-d28b532f5bba
+            userCondition: null
+            warning: null
+            width: 50
+        name: Content
+        uid: d7bf027d-70cb-4b30-8844-2727b685b7fc
+        userCondition: null
+fields:
+  78ede8e3-62a7-447b-bb83-89a3b8e49115: # Mission Link Text
+    columnSuffix: lqtaaatn
+    contentColumnType: text
+    fieldGroup: null
+    handle: missionLinkText
+    instructions: null
+    name: 'Mission Link Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  693ea570-7c45-4f76-9618-2598d8a1e10d: # Mission Heading
+    columnSuffix: tjlvffvm
+    contentColumnType: text
+    fieldGroup: null
+    handle: missionHeading
+    instructions: null
+    name: 'Mission Heading'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  87029079-a4e2-42cf-acce-ed5218a3fc22: # Mission Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: missionImage
+    instructions: null
+    name: 'Mission Image'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:8643c5fb-00e9-456f-bdee-7e89d6e5952b' # Uploads
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maxRelations: 1
+      minRelations: null
+      previewMode: full
+      restrictFiles: true
+      restrictLocation: true
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:8643c5fb-00e9-456f-bdee-7e89d6e5952b' # Uploads
+      restrictedLocationSubpath: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Asset
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\assets\AssetCondition
+      selectionLabel: null
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  b2649253-f8ee-4d24-81a5-90f424f599d6: # Mission Link
+    columnSuffix: phalmhlq
+    contentColumnType: string
+    fieldGroup: null
+    handle: missionLink
+    instructions: null
+    name: 'Mission Link'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      localizeRelations: false
+      maxRelations: 1
+      minRelations: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Entry
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\entries\EntryCondition
+      selectionLabel: null
+      showSiteMenu: true
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  bdd11199-dd65-48d9-b75a-f9229fd8209c: # Mission Description
+    columnSuffix: pvactsws
+    contentColumnType: text
+    fieldGroup: null
+    handle: missionDescription
+    instructions: null
+    name: 'Mission Description'
+    searchable: false
+    settings:
+      availableTransforms: ''
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: null
+      purifyHtml: true
+      redactorConfig: null
+      removeEmptyTags: false
+      removeInlineStyles: false
+      removeNbsp: false
+      showHtmlButtonForNonAdmins: false
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+handle: mission
+name: Mission
+sortOrder: 1

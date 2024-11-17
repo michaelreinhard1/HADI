@@ -1,0 +1,27 @@
+{% extends "_layouts/base.twig" %}
+
+{% block title %}
+	{{parent()}}
+	- 404
+{% endblock %}
+
+{% block spacer %}{% endblock %}
+
+{% block body %}
+
+	<section class="flex items-center h-screen p-16 grid place-items-center">
+		<div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
+			<div class="max-w-xl text-center">
+				<h2 class="mb-8 font-extrabold text-9xl ">
+					<span class="sr-only">Error</span>404
+				</h2>
+				<p class="text-2xl font-semibold md:text-3xl">Sorry, we konden deze pagina niet vinden.</p>
+				<p class="mt-4 mb-8 ">Maar maak je geen zorgen, je kunt genoeg andere dingen vinden op onze homepage</p>
+				<a rel="noopener noreferrer" href="{{url('/')}}" class="px-8 py-3 text-white font-semibold rounded bg-blue-500">Terug naar de startpagina</a>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

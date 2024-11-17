@@ -1,0 +1,110 @@
+field: 65ea9303-bbd2-422a-ae19-a886de8e8f50 # Form
+fieldLayouts:
+  e77e7c9f-a079-4d0d-a572-99cecb80bccc:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: ce6e23f6-d4e3-41b3-9fa4-db83ddf1d165 # ID for label
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f6eafe73-9933-4ff0-b51e-1fd845ae05af
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 52182910-0b97-4a6d-b309-a6933fe46dff # Label
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: edb2c19b-3a6a-40b1-8556-15c260ae9a1d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 72006fb8-890e-4f87-a08b-43294240ce8f # Placeholder
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 34a5427b-25f4-4f65-9459-04777082a601
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 681f6578-3e0e-4ebc-a2ff-9059e8be8fd6
+        userCondition: null
+fields:
+  72006fb8-890e-4f87-a08b-43294240ce8f: # Placeholder
+    columnSuffix: xensfcqq
+    contentColumnType: text
+    fieldGroup: null
+    handle: placeholder
+    instructions: null
+    name: Placeholder
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  52182910-0b97-4a6d-b309-a6933fe46dff: # Label
+    columnSuffix: chaltomt
+    contentColumnType: text
+    fieldGroup: null
+    handle: label
+    instructions: null
+    name: Label
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ce6e23f6-d4e3-41b3-9fa4-db83ddf1d165: # ID for label
+    columnSuffix: tiewlyib
+    contentColumnType: text
+    fieldGroup: null
+    handle: id_for_label
+    instructions: null
+    name: 'ID for label'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: textArea
+name: 'Text Area'
+sortOrder: 3

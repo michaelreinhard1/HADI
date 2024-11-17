@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: b729ebe4-ef74-47c4-9328-0b9b0356859c # Common
+handle: login
+instructions: null
+name: Login
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_login}}'
+  maxBlocks: 1
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -1,0 +1,394 @@
+field: a91d099e-b6fb-4970-b320-bb754c515fd2 # Login
+fieldLayouts:
+  37fba085-98d4-4668-935c-849c9b16aa4b:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 8126c0e0-f5e3-42a1-aea6-8f54c11547e9 # Title
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1848ef8a-4c9f-4034-b731-a91bf9112e66
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 605209a1-5b98-4d6b-846e-bf09aee1fec7 # Email Label
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: eab979a3-560c-48a4-91eb-0cb819e37ea3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b5d20afa-510b-43b2-b499-f1b7fb14bc42 # Email Placeholder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 004086fc-59a4-4d49-83e3-6d50f135501a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 98ddeb5b-3a4b-4a32-80e8-97c1e379939e # Password Label
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f6b6c7f6-56d0-48d8-9229-1280cd5218ea
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: e9a0dda1-8ce6-4008-b16d-e0b920f8180a # Remember Me Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 651407cf-4610-4524-89b1-2cde73533716
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c8e11b39-2e62-4fba-9676-92af69823e02 # Forgot Password Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c6079ba7-29d3-4f18-8454-e4b64eadd37e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f055d6bc-6ae4-489d-bca8-d1293a9e48fa # Forgot Password Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fee5da64-e141-4169-a42b-07be8b2160da
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: e016810c-1ace-474c-ad31-2ab30604081b # Register Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0ff26af3-4a02-41d4-9791-a57c9dc149d8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 89229979-5c86-4bd4-8026-a44680d5e758 # Register Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f0dbd541-4272-4134-8faf-ab34a9d1467a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6f76cc44-1a4d-436c-a06c-9deae4f0efde # Register Link Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9d36fd2c-4e73-419b-8aa9-549cd52d9002
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: bd5cde3e-aace-43dc-8675-68a5df29b825 # Button Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c0a79362-3cb7-451f-9b99-2d49f325c933
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: f04b9f8b-49d2-4d75-9b9a-681d1ace2d9a
+        userCondition: null
+fields:
+  6f76cc44-1a4d-436c-a06c-9deae4f0efde: # Register Link Text
+    columnSuffix: erbbvnvy
+    contentColumnType: text
+    fieldGroup: null
+    handle: loginRegister
+    instructions: null
+    name: 'Register Link Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  98ddeb5b-3a4b-4a32-80e8-97c1e379939e: # Password Label
+    columnSuffix: cjagcyfa
+    contentColumnType: text
+    fieldGroup: null
+    handle: loginPasswordLabel
+    instructions: null
+    name: 'Password Label'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  8126c0e0-f5e3-42a1-aea6-8f54c11547e9: # Title
+    columnSuffix: jsdwxxba
+    contentColumnType: text
+    fieldGroup: null
+    handle: loginTitle
+    instructions: null
+    name: Title
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  605209a1-5b98-4d6b-846e-bf09aee1fec7: # Email Label
+    columnSuffix: ycyvehdm
+    contentColumnType: text
+    fieldGroup: null
+    handle: loginEmailLabel
+    instructions: null
+    name: 'Email Label'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  89229979-5c86-4bd4-8026-a44680d5e758: # Register Link
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: loginRegisterLink
+    instructions: null
+    name: 'Register Link'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      localizeRelations: false
+      maxRelations: 1
+      minRelations: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Entry
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\entries\EntryCondition
+      selectionLabel: null
+      showSiteMenu: true
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  b5d20afa-510b-43b2-b499-f1b7fb14bc42: # Email Placeholder
+    columnSuffix: owfbclul
+    contentColumnType: text
+    fieldGroup: null
+    handle: loginEmailPlaceholder
+    instructions: null
+    name: 'Email Placeholder'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  bd5cde3e-aace-43dc-8675-68a5df29b825: # Button Text
+    columnSuffix: vezqumhp
+    contentColumnType: text
+    fieldGroup: null
+    handle: loginButton
+    instructions: null
+    name: 'Button Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  c8e11b39-2e62-4fba-9676-92af69823e02: # Forgot Password Link
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: loginForgotPasswordLink
+    instructions: null
+    name: 'Forgot Password Link'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      localizeRelations: false
+      maxRelations: 1
+      minRelations: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Entry
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\entries\EntryCondition
+      selectionLabel: null
+      showSiteMenu: true
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  e016810c-1ace-474c-ad31-2ab30604081b: # Register Text
+    columnSuffix: sjpvoxno
+    contentColumnType: text
+    fieldGroup: null
+    handle: loginRegisterText
+    instructions: null
+    name: 'Register Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  e9a0dda1-8ce6-4008-b16d-e0b920f8180a: # Remember Me Text
+    columnSuffix: kleoayzm
+    contentColumnType: text
+    fieldGroup: null
+    handle: loginRememberMe
+    instructions: null
+    name: 'Remember Me Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  f055d6bc-6ae4-489d-bca8-d1293a9e48fa: # Forgot Password Text
+    columnSuffix: lnsirwuo
+    contentColumnType: text
+    fieldGroup: null
+    handle: loginForgotPassword
+    instructions: null
+    name: 'Forgot Password Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: login
+name: Login
+sortOrder: 1

@@ -1,0 +1,46 @@
+defaultPlacement: end
+fieldLayouts:
+  e1441ddd-6be7-476c-8b59-52a3e0d2d9f1:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            uid: eb87cfea-b06e-4b68-b5d0-885904b3490f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 755c93a7-120d-441f-8fb0-bb7f89e98b44
+        userCondition: null
+handle: themeType
+name: 'Theme Type'
+siteSettings:
+  de9adf7f-6fe6-4483-b882-eed90f12fddf: # HADI
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: null
+  uid: 7a25f61b-7939-47ff-a4c8-a2491f47833f

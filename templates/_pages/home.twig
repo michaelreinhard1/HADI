@@ -1,0 +1,133 @@
+{% extends "_layouts/base.twig" %}
+
+{% block title %}
+	{{parent()}}
+	-
+	{{entry.title}}
+{% endblock %}
+{% block body %}
+
+	{% if currentUser %}
+		{% redirect 'themes' %}
+	{% endif %}
+
+	{% set hero = entry.hero.one() %}
+
+	{% set image = hero.heroImage.one() %}
+
+	{% set focalPoint = image.focalPoint %}
+
+	{% set focalPointX = focalPoint.x * 100 %}
+
+	{% set focalPointY = focalPoint.y * 100 %}
+
+	{% set focalPoint = focalPointX ~ '% ' ~ focalPointY ~ '%' %}
+
+	{% if hero.heroButtonLink.one() is null %}
+		{% set heroButtonLink = null %}
+	{% else %}
+		{% set heroButtonLink = hero.heroButtonLink.one().url %}
+	{% endif %}
+
+	<div
+		class="w-full bg-cover bg-center" style="height:42rem; background-image: url({{ image.getUrl()}}); background-position: {{ focalPoint }};">
+		{# Fallback image for browsers that don't support background-image #}
+		<div class="flex items-center  h-full w-full bg-gray-900 bg-opacity-50 relative">
+			<div class="container mx-auto z-10 flex flex-col">
+				<h1 class="text-white text-md font-extrabold md:text-5xl md:w-1/2 md:leading-tight">
+					{{ hero.heroTitle }}
+				</h1>
+				<p class="my-6 text-white text-sm md:text-base md:w-2/4">
+					{{ hero.heroDescription }}
+				</p>
+				{% if currentUser %}
+					<a href="{{url('/themes')}}" class="py-2 px-6 rounded-md bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-md transition-all w-fit">
+						Bekijk alle thema's en dossiers
+					</a>
+				{% else %}
+					<a href="{{heroButtonLink}}" class="py-2 px-6 rounded-md bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-md transition-all w-fit">
+						{{ hero.heroButtonText }}
+					</a>
+				{% endif %}
+			</div>
+			{# <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-transparent"></div> #}
+		</div>
+	</div>
+
+	<!-- Missions -->
+
+	<div class="md:my-24 my-10 flex flex-col items-center">
+		<h1 class="font-bold text-4xl text-center">
+			{{ entry.missionTitle }}</h1>
+		{% for mission in entry.missions %}
+
+			{% if mission.missionLink.one() is null %}
+				{% set missionLink = null %}
+			{% else %}
+				{% set missionLink = mission.missionLink.one().url %}
+			{% endif %}
+
+			{% if loop.index is odd %}
+				{% set flexClass = 'flex-row' %}
+			{% else %}
+				{% set flexClass = 'flex-row-reverse' %}
+			{% endif %}
+			{% include "_partials/mission.twig" with {
+            "heading": mission.missionHeading,
+            "description": mission.missionDescription,
+            "image": mission.missionImage.one(),
+            "link": missionLink,
+            "linkText": mission.missionLinkText,
+            "flexClass": flexClass
+        } %}
+		{% endfor %}
+	</div>
+
+	<!-- General Themes -->
+
+	<div class="md:my-10">
+		<h1 class="font-bold md:text-4xl text-2xl text-center">
+			{{ entry.generalThemeTitle }}</h1>
+		<div class="container mx-auto md:mt-20 grid md:grid-cols-4 grid-cols-1 md:gap-8 gap-2 justify-center">
+			{% for theme in entry.themes.all() %}
+				{% include "_partials/theme.twig" with {
+            theme: theme
+        } %}
+			{% endfor %}
+
+		</div>
+		<a class="font-medium text-center flex flex-wrap justify-start items-center justify-center my-5 items-center transition-all duration-300 ease-in-out w-full col-span-2 col-start-2 text-blue-500 hover:text-blue-700 mt-8" href="{{ url('/themes') }}">
+			<div class="flex items-center">
+				<p>
+					Bekijk alle thema's en dossiers
+				</p>
+				{# svg arrow #}
+				<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+				</svg>
+			</p>
+		</div>
+	</a>
+</div>
+
+<!-- Contact Form -->
+
+{%set form = entry.form %}
+
+{% if form is not empty %}
+
+	<div class="md:my-10 mb-5">
+		<h1 class="font-bold md:text-4xl text-2xl text-center">
+			{{ entry.formTitle }}
+		</h1>
+		<p class="text-center my-6 text-sm md:text-md w-3/4 md:w-full mx-auto">
+			{{ entry.formDescription }}
+		</p>
+		<div class="container mx-auto" id"contact">
+			{% include "_partials/form.twig" with {
+            'form': form,
+        } %}
+		</div>
+	</div>
+
+{% endif %}{% endblock %}

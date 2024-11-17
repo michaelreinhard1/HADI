@@ -1,0 +1,51 @@
+{% set image = craft.assets.filename('default-user-image.png').one() %}
+<div class="flex items-center justify-end space-x-4 md:ml-4 md:flex-shrink-0 md:space-x-8 relative z-[100]">
+	<button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName" class="flex items-center text-sm font-medium text-gray-900 rounded-full hover:text-blue-600 " type="button">
+		<span class="sr-only">Open user menu</span>
+		<img class="mr-2 w-8 h-8 rounded-full object-cover" src="{{ image.getUrl() }}" alt="user photo">
+		<svg class="w-4 h-4 mx-1.5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+			<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+		</svg>
+	</button>
+
+	<!-- Dropdown menu -->
+	<div id="dropdownAvatarName" class="absolute hidden left-1/2 top-10 -translate-x-3/4 z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow ">
+		<a href="{{url('profile')}}" class="block py-3 px-4 text-sm text-gray-900 hover:bg-gray-100 transition-all">
+			<div class="font-medium ">
+				{% if currentUser.admin %}
+					{{ 'Admin'|t }}
+				{% endif %}
+			</div>
+			<div class="truncate">
+				{{ currentUser.fullName }}
+			</div>
+		</a>
+		<ul class="py-1 text-sm text-gray-700 " aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
+			<li>
+				<a href="{{ url('profile') }}" class="block py-2 px-4 hover:bg-gray-100 transition-all">
+					Profiel
+				</a>
+			</li>
+			{% if currentUser.admin %}
+				<li>
+					<a href="{{ url('admin') }}" class="block py-2 px-4 hover:bg-gray-100 transition-all">
+						Dashboard
+					</a>
+				</li>
+			{% endif %}
+		</ul>
+		<div class="py-1">
+			<form method="post" accept-charset="UTF-8" class="block text-sm text-gray-700 hover:bg-gray-100 transition-all">
+				{{ csrfInput() }}
+				{{ actionInput('users/logout') }}
+
+				{{ hiddenInput('userId', user.id) }}
+
+				<button type="submit" class="w-full text-left block py-2 px-4 text-sm text-red-700 hover:bg-red-100 transition-all">
+					{{ 'Log uit'|t }}
+				</button>
+			</form>
+		</div>
+	</div>
+</div>
+{% js '@web/assets/js/dropdown.js' %}

@@ -1,0 +1,175 @@
+fieldLayouts:
+  943fad40-5b57-4672-ba37-39e552d8c4a9:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 517e858f-2f9d-43d0-bf99-59c2e646a41a # Hero
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: de8d722f-fbb6-45f5-b561-8b386b21948a
+            userCondition: null
+            warning: null
+            width: 100
+        name: Hero
+        uid: b29c699d-f24e-4f6f-8ce1-386a215cce61
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 76edcb64-ac57-45bb-a955-7ac3d0b84ab7 # Mission Title
+            instructions: null
+            label: Title
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 471e5543-b2b9-4613-9d9e-cc595b89eea2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: efd7e889-8118-484d-a63e-04f4864c9478 # Missions
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a054414b-eed2-4b7f-a5b8-ff21d6f45c34
+            userCondition: null
+            warning: null
+            width: 100
+        name: Missions
+        uid: 166819f2-8028-4de9-b3d1-8b11a33a4a73
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 689dcc51-e441-454a-ba85-d22adf875ac7 # General Theme Title
+            instructions: null
+            label: Title
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 132d8274-48ca-44bd-a5b0-d0951e7e6fc4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 38bfd440-a245-41ce-938b-c8f6fc6b5a21 # Themes
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f4b7b6a9-7e8d-4353-a705-6a35a1cc85a2
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Thema''s en dossiers'
+        uid: b6791564-5f7c-4ce0-a9fb-ce37689a2a3f
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 5fe6059a-749c-41ad-8629-c91692e4cb87 # Form Title
+            instructions: null
+            label: Title
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9d2774c1-fcea-4e82-8f37-e6d8c82c6d82
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1e680a5e-1fac-45de-9d3e-7e2f835bd087 # Form Description
+            instructions: null
+            label: Description
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5d49e86a-165a-40b0-96bd-824ebd113924
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 65ea9303-bbd2-422a-ae19-a886de8e8f50 # Form
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b7a0cfb1-3f29-428c-ac5b-9ec60450fa83
+            userCondition: null
+            warning: null
+            width: 100
+        name: Contact
+        uid: ed0c7093-9bfd-4c82-9dc3-7d03cdea3ed9
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 1b9797ab-a095-48dd-b008-a4bc57ad64c7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 79988fe9-7718-4316-9679-039fdc6f30f9 # Site title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e676e185-1c55-4142-bcfa-8db7192f717e
+            userCondition: null
+            warning: null
+            width: 100
+        name: Meta
+        uid: 4a139a7e-c1d6-4325-8f89-25d62a6e240d
+        userCondition: null
+handle: home
+hasTitleField: true
+name: Home
+section: 0f523942-0a6c-4131-aa73-4e6bf8e99b7c # Home
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

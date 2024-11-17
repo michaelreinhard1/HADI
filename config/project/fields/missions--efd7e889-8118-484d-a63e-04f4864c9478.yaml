@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 0c8cff9f-0e71-4f85-a556-49c8f84de228 # Mission
+handle: missions
+instructions: null
+name: Missions
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_missions}}'
+  maxBlocks: null
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

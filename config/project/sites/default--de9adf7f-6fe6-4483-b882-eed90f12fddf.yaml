@@ -1,0 +1,9 @@
+baseUrl: $PRIMARY_SITE_URL
+enabled: true
+handle: default
+hasUrls: true
+language: nl
+name: HADI
+primary: true
+siteGroup: 9521fa36-84ad-49d7-b343-9d655e051643 # onderwijsplatform
+sortOrder: 1

@@ -1,0 +1,46 @@
+field: 65ea9303-bbd2-422a-ae19-a886de8e8f50 # Form
+fieldLayouts:
+  67a91c62-207b-4ef7-84e5-52eeb6c0aabf:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: f5072e2e-b8a8-4207-a654-4b2f7fc501d2 # Buton Text
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c5bf5c70-1b7c-490f-99a9-a717e65dc802
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 579197b5-7472-4a8e-ac4e-f4274e3d68c5
+        userCondition: null
+fields:
+  f5072e2e-b8a8-4207-a654-4b2f7fc501d2: # Buton Text
+    columnSuffix: frcyelut
+    contentColumnType: text
+    fieldGroup: null
+    handle: buttonText
+    instructions: null
+    name: 'Buton Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: button
+name: Button
+sortOrder: 4

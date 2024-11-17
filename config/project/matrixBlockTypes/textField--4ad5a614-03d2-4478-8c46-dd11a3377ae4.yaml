@@ -1,0 +1,110 @@
+field: 65ea9303-bbd2-422a-ae19-a886de8e8f50 # Form
+fieldLayouts:
+  2baebe37-ec4e-41df-b426-3305b8cc8381:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 30bdced0-2339-4dc8-bc89-9bc5d3913030 # ID for label
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ae5b3b96-49e1-4fb8-b10e-a2cf4b2e5fef
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0ddbde94-92c5-486a-a374-a0da47f96b69 # Label
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 22a3f4e2-4982-4ed2-9220-86202ed5ae07
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0d498f95-e563-4349-ac44-6573d3e63c4f # Placeholder
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4fbde3c2-3bc7-4b9e-8fb0-afb16883b2c8
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: bbc99c88-7666-42e3-b6ff-82e794cfdc33
+        userCondition: null
+fields:
+  0d498f95-e563-4349-ac44-6573d3e63c4f: # Placeholder
+    columnSuffix: tisdqdqw
+    contentColumnType: text
+    fieldGroup: null
+    handle: placeholder
+    instructions: null
+    name: Placeholder
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  0ddbde94-92c5-486a-a374-a0da47f96b69: # Label
+    columnSuffix: hljxgbav
+    contentColumnType: text
+    fieldGroup: null
+    handle: label
+    instructions: null
+    name: Label
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  30bdced0-2339-4dc8-bc89-9bc5d3913030: # ID for label
+    columnSuffix: yiixuprx
+    contentColumnType: text
+    fieldGroup: null
+    handle: idForLabel
+    instructions: null
+    name: 'ID for label'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: textField
+name: 'Text Field'
+sortOrder: 1

@@ -1,0 +1,35 @@
+{% extends "_layouts/base.twig" %}
+
+{% block title %}
+	{{parent()}}
+	-
+	{{ category.title }}
+{% endblock %}
+
+{% block body %}
+
+	{% requireLogin %}
+
+	<div class="md:my-20 container mx-auto">
+		<h1 class="font-bold text-2xl md:text-4xl text-center">
+			{{ category.title }}
+		</h1>
+
+		{% set articles = craft.entries.section('article').contentType(category).all() %}
+
+		{% if articles|length == 0 or articles == null %}
+
+			<div class="text-center text-md mt-20">Geen artikelen gevonden</div>
+
+		{% else %}
+			<div class="grid grid-cols-1 gap-4 gap-y-10 md:grid-cols-2 lg:grid-cols-3 mt-14 mb-10">
+				{% for article in articles %}
+
+					{% include "_partials/article" with {article: article} %}
+
+				{% endfor %}
+			</div>
+		{% endif %}
+	</div>
+
+{% endblock %}

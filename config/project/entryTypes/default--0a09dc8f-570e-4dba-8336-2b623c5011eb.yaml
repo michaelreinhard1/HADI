@@ -1,0 +1,125 @@
+fieldLayouts:
+  25648c68-49de-4493-bb42-8a14e83f2341:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 1e2c6311-c4c9-4c78-ae68-42eca68c3769
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 46c6bd9b-d036-49cb-be1f-8a16b18032a5 # Sub Menu
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f4e7cc19-3f9d-4b7c-9b73-b8fac73e9130
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: da71160f-aa7f-419d-b506-dcb2151d5704 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ed8dd257-06f3-433e-b66d-1ad49df65f37
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ebb7ab24-cf75-4119-9e14-c6c635f948c7 # Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 484ab202-6747-476d-b844-afde98d1655c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 38bfd440-a245-41ce-938b-c8f6fc6b5a21 # Themes
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9c56a79e-9a8f-424f-b54b-722d9548086a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 984198d8-ac80-4e55-a662-630c9f8d7396 # Content Type
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0e29b8c6-d34f-421b-92f4-1d759e0f0bc9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\RelationalFieldConditionRule
+                  elementId: '1376'
+                  fieldUid: 984198d8-ac80-4e55-a662-630c9f8d7396 # Content Type
+                  operator: relatedTo
+                  uid: bc8d1e3e-c0b8-4f69-80dd-fcd7a1e7ff45
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 976f3618-23d8-4440-b4cc-95201a174320 # Google slides
+            instructions: null
+            label: 'Google slides URL'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: aed473fb-623e-4a2d-80c2-5f4468a593ae
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: a2fac3e0-c7b1-485b-b14b-f5f11eefecca
+        userCondition: null
+handle: default
+hasTitleField: true
+name: Default
+section: 44aee174-7f3e-4ebb-a846-0b2843a3f671 # Article
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

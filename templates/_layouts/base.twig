@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	{% block head %}
+		<head>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+			<meta charset="utf-8"/>
+			<title>
+				{% block title %}
+					{{ docTitle ?? siteName }}
+				{% endblock %}
+			</title>
+			<link rel="apple-touch-icon" sizes="180x180" href="{{ docTitle ?? siteUrl }}assets/images/apple-touch-icon.png">
+			<link rel="icon" type="image/png" sizes="32x32" href="{{ docTitle ?? siteUrl }}assets/images/favicon-32x32-light.png">
+			<link rel="icon" type="image/png" sizes="16x16" href="{{ docTitle ?? siteUrl }}assets/images/favicon-16x16-light.png">
+			<link rel="manifest" href="{{ docTitle ?? siteUrl }}assets/images/site.webmanifest">
+			<link rel="mask-icon" href="{{ docTitle ?? siteUrl }}assets/images/safari-pinned-tab.svg" color="#5bbad5">
+			<meta name="msapplication-TileColor" content="#da532c">
+			<meta name="theme-color" content="#ffffff">
+
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+			<meta name="referrer" content="origin-when-cross-origin"/>
+			<link href="{{ docTitle ?? siteUrl }}assets/css/output.css" rel="stylesheet">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.0.16/css/froala_editor.pkgd.min.css" integrity="sha512-vuMfJiP1mynSaBWEsouDLOvvRmMeib2s936m2d+OalK9nYIzrPmSM6kOxBLoydHWLjWSZY99Yx1zqnYSR2nqvQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+		</head>
+	{% endblock %}
+	<body class="bg-white min-h-screen flex flex-col">
+		{% block scripts %}
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.0.16/js/froala_editor.pkgd.min.js" integrity="sha512-cdPreUNlEBCU2l+Z2oMzxKbfATPuqSK8scXsAw6h/AEzmXhbxd8wxFCn5s386wyEv37ljkKMRXhzGaisKPPNmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		{% endblock %}
+		{% include '_components/navigation.twig' %}
+		{% if currentUser %}
+			{% block spacer %}
+				{% include '_partials/header-spacer.twig' %}
+			{% endblock %}
+		{% endif %}
+		{% block body %}{% endblock %}
+		{% block footer %}
+			{% include '_components/footer.twig' %}
+		{% endblock %}
+	</body>
+</html>

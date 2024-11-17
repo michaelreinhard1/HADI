@@ -1,0 +1,10 @@
+<a class="bg-white rounded-md p-5 font-medium text-center flex flex-wrap justify-start items-center justify-center my-5 items-center transition-all duration-300 ease-in-out drop-shadow-md hover:shadow-lg w-full" href="{{ theme.url }}">
+	<div class="flex items-center">
+		{% if theme.image.one() %}
+			<img id="themeImage" src="{{ theme.image.one().getUrl() ?? '' }}" alt="Image" class="mx-3 w-7">
+		{% endif %}
+		<p class="">
+			{{ theme.title ?? 'Thema naam' }}
+		</p>
+	</p>
+</div></a>

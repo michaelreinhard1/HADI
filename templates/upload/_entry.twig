@@ -1,0 +1,229 @@
+{% extends "_layouts/base.twig" %}
+
+{% block title %}
+	{{parent()}}
+	-
+	{{entry.title}}
+{% endblock %}
+{% block spacer %}{% endblock %}
+
+{% requireLogin %}
+
+{% if currentUser.isInGroup('readers')%}
+	{% redirect url('404')%}
+{% endif %}
+
+{% block body %}
+
+	{% macro errorList(errors) %}
+		{% if errors %}
+			{{ ul(errors, {class: 'text-red-500 text-sm font-medium mt-4'}) }}
+		{% endif %}
+	{% endmacro %}
+
+	{% set entry = entry ?? create('craft\\elements\\Entry') %}
+
+	{% set slug = craft.app.request.getParam('slug') %}
+
+
+	{% if slug %}
+		{% set article = craft.entries.section('article').slug(slug).one() %}
+		{% set items = craft.entries.section('article').descendantOf(article.id).all() %}
+	{% else %}
+		{% set article = null %}
+	{% endif %}
+
+	<section class="h-full container my-10 md:my-0">
+		<div class="flex flex-col items-center justify-center md:px-6 py-8 mx-auto ">
+			<div class=" md:w-3/4 w-full bg-white rounded-lg shadow md:mt-60 mt-5">
+				<div class="w-full mx-auto p-6 space-y-4 md:space-y-6 sm:p-8">
+					<div class="flex justify-between items-center">
+						<h1
+							class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
+							{# add back button #}
+							{% if slug %}
+								<a
+									href="{{ url('article/' ~ slug) }}" class="inline-flex items-center px-4 py-2">
+									{# Left arrow back button #}
+									<svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="black" aria-hidden="true">
+										<path fill-rule="evenodd" d="M7 5a1 1 0 00-1.707 0L.293 9.707a1 1 0 000 1.414L5.293 16.3a1 1 0 001.414-1.414L3.414 11H15a1 1 0 100-2H3.414l2.293-2.293A1 1 0 007 5z" clip-rule="evenodd"/>
+									</svg>
+								</a>
+							{% endif %}
+							Wizard
+						</h1>
+						{% if article %}
+							<a href="{{ url('article/' ~ slug) }}" class="text-md font-bold text-blue-600 hover:text-blue-500">
+								{{ 'Ga naar artikel'|t }}
+							</a>
+						{% endif %}
+					</div>
+					{% if article %}
+						<div>
+							<a href="{{ url('upload-add-navigation?slug=' ~ slug) }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+								<svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
+									<path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 6a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 6a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+								</svg>
+								<span>
+									{{ items | length > 0 ? 'Navigatie bewerken' : 'Navigatie toevoegen' }}
+								</span>
+							</a>
+						</div>
+					{% endif %}
+					<form class="space-y-4 md:space-y-6" method="post" accept-charset="UTF-8" enctype="multipart/form-data" id="upload-form">
+						{{ csrfInput() }}
+						{{ actionInput('entries/save-entry') }}
+						{{ hiddenInput('typeId', '1') }}
+						{{ hiddenInput('sectionId', '11') }}
+						{{ hiddenInput('enabled', '1') }}
+						{% if article %}
+							{{ hiddenInput('entryId', article.id) }}
+							{{ redirectInput('article/{slug}') }}
+						{% else %}
+							{{ redirectInput('upload-add-navigation?slug={slug}') }}
+						{% endif %}
+
+						<div>
+							<label for="title" class="block mb-2 text-sm font-medium text-gray-900">Titel</label>
+							{{ input('text', 'title', article.title ?? null, {
+                        id: 'title',
+                        placeholder: 'Title',
+                        class: ' border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5',
+                      }) }}
+							{{ _self.errorList(entry.getErrors('title')) }}
+						</div>
+						<div>
+							<label for="body" class="block mb-2 text-sm font-medium text-gray-900">
+								Inhoud
+							</label>
+							{{ tag('textarea', {
+                        id: 'body',
+                        name: 'fields[body]',
+                        text: article.body ?? null,
+                        class: ' border border-gray-300 text-gray-900 sm:text-sm rounded-lg h-56 max-h-96 focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5',
+                      }) }}
+							{{ _self.errorList(entry.getErrors('body')) }}
+						</div>
+						<div>
+							<label class="block mb-2 text-sm font-medium text-gray-900">
+								Afbeelding
+							</label>
+							{% include '_includes/forms/image-upload' with {
+                id: 'image',
+                name: 'fields[image][]',
+                value: entry.image,
+                errors: entry.getErrors('image'),
+                required: true,
+              } %}
+						</div>
+						<div class="md:flex justify-between">
+							<div class="md:w-1/2 md:pr-2 h-full">
+								{% set themes = craft.categories.group('themes').themeType(1644).all() %}
+
+								{% set theologicalThemes = craft.categories.group('themes').themeType(1645).all() %}
+								{% if article %}
+									{% set articleTheme = article.themes.one() %}
+								{% else %}
+									{% set articleTheme = null %}
+									{% set articleTheologicalTheme = null %}
+								{% endif %}
+								<label for="themes" class="block mb-2 text-sm font-medium text-gray-900">
+									Categorie
+								</label>
+								<select name="fields[themes][]" class=" border border-gray-300 h-full text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5">
+									<option value="" disabled class="font-bold text-black">Algemene thema's</option>
+									{% for theme in themes %}
+										<option value="{{ theme.id }}" {% if articleTheme and articleTheme.id == theme.id %} selected {% endif %}>{{ theme.title }}</option>
+									{% endfor %}
+									<option value="" disabled></option>
+									<option value="" disabled class="font-bold text-black mt-4">Theologische thema's</option>
+									{% for theme in theologicalThemes %}
+										<option value="{{ theme.id }}" {% if articleTheme and articleTheme.id == theme.id %} selected {% endif %}>{{ theme.title }}</option>
+									{% endfor %}
+								</select>
+
+							</div>
+							<div class="pt-2 md:pt-0 md:w-1/2 md:pr-2 h-full">
+
+								{% set types = craft.categories.group('contentType').all() %}
+								{% if article %}
+									{% set articleType = article.contentType.one() %}
+								{% else %}
+									{% set articleType = null %}
+								{% endif %}
+								<label for="contentType" class="block mb-2 text-sm font-medium text-gray-900">
+									Type
+								</label>
+
+								<select id="contentType" name="fields[contentType][]" class=" border border-gray-300 h-full text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5">
+									{% for type in types %}
+										<option value="{{ type.id }}" {% if articleType and articleType.id == type.id %} selected {% endif %}>{{ type.title }}</option>
+									{% endfor %}
+								</select>
+
+							</div>
+						</div>
+						<div>
+							<label for="googleSlides" class="block mb-2 text-sm font-medium text-gray-900">
+								Google Slides URL
+							</label>
+
+							{% set googleSlides = null %}
+							{% set disabled = true %}
+							{% if article %}
+								{% if article.googleSlides == null %}
+									{% set disabled = true %}
+									{% set googleSlides = null %}
+								{% else %}
+									{% set disabled = false %}
+									{% set googleSlides = article.googleSlides %}
+								{% endif %}
+							{% endif %}
+							{{ input('text', 'fields[googleSlides]', googleSlides, {
+									disabled: disabled,
+									id: 'googleSlides',
+									placeholder: '',
+									class: ' border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5',
+								}) }}
+							{{ _self.errorList(entry.getErrors('googleSlides')) }}
+
+						</div>
+					</div>
+				</form>
+				<div class="flex justify-between items-center m-6 sm:m-8">
+					{% if article %}
+						<form method="post" accept-charset="UTF-8" enctype="multipart/form-data" id="delete-form">
+							{{ csrfInput() }}
+							{{ actionInput('entries/save-entry') }}
+							{% if article %}
+								{{ redirectInput('upload') }}
+							{% else %}
+								{{ redirectInput('upload-add-navigation?slug={slug}') }}
+							{% endif %}
+							{{ hiddenInput('typeId', '1') }}
+							{{ hiddenInput('sectionId', '11') }}
+							{{ hiddenInput('enabled', '0') }}
+							{% if article %}
+								{{ hiddenInput('entryId', article.id) }}
+							{% endif %}
+							<button type="submit" class='w-fit text-red-500 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm pl-2 pr-5 py-2.5 text-center transition-all' type="submit" onclick="return confirm('Weet je zeker dat je dit artikel wilt verwijderen?');">
+								Verwijderen
+							</button>
+						</form>
+					{% endif %}
+					<button type="submit" class="w-fit text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-all {% if article == null %} ml-auto {% endif %}" onclick="submitForm();">
+						{% if article %}
+							{{ 'Wijzigingen opslaan'|t }}
+						{% else %}
+							{{ 'Toevoegen'|t }}
+						{% endif %}
+					</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+{% block footer %}{% endblock %}
+{% js '@web/assets/js/article-entry.js' %}{% endblock %}

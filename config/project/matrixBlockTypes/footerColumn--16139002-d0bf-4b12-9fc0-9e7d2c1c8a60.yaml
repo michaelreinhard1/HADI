@@ -1,0 +1,92 @@
+field: 2a0e60f6-18d1-4fd2-bd57-a5cb0674f933 # Columns
+fieldLayouts:
+  7f92cec2-98d7-4aa2-8d49-95bbd30151a5:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 8afc8884-5279-4904-948f-f558fa630bb9 # Column Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: be6059d8-b239-43af-b037-b8b5dacc7181
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 26e77a68-8ff8-4d60-a6de-a18f376613fa # Footer Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0aa81782-f4df-422a-b662-a663242db1a8
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 645b27d6-8d3d-4e3a-a0f6-9e4e8f8c437b
+        userCondition: null
+fields:
+  8afc8884-5279-4904-948f-f558fa630bb9: # Column Title
+    columnSuffix: jrpkfyyd
+    contentColumnType: text
+    fieldGroup: null
+    handle: columnTitle
+    instructions: null
+    name: 'Column Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  26e77a68-8ff8-4d60-a6de-a18f376613fa: # Footer Link
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: footerLink
+    instructions: null
+    name: 'Footer Link'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      localizeRelations: false
+      maxRelations: 10
+      minRelations: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Entry
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\entries\EntryCondition
+      selectionLabel: null
+      showSiteMenu: true
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+handle: footerColumn
+name: 'Footer Column'
+sortOrder: 1

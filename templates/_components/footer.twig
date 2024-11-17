@@ -1,0 +1,37 @@
+{% set footerColumns = footer.columns.all() %}
+
+<footer class="py-12 bg-gray-50 border-t border-gray-200 mt-auto">
+	<div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+		<div class="text-center xl:flex xl:items-center xl:text-left">
+			<div class="xl:flex xl:items-center xl:justify-start">
+				{% if craft.rebrand.isLogoUploaded %}
+					<img src="{{ craft.rebrand.logo.url }}" alt="Logo" class="w-auto mx-auto h-7">
+				{% else %}
+					<span class="w-auto mx-auto h-7 self-center text-xl font-semibold whitespace-nowrap font-extrabold">
+						{{ siteName }}
+					</span>
+				{% endif %}
+
+				<p class="mt-5 text-sm text-black xl:ml-6 xl:mt-0">© Copyright
+					{{ "now"|date("Y")}}
+					{{ siteName }}</p>
+			</div>
+
+			<div class="flex ml-8 items-center mt-8 xl:mt-0 xl:flex xl:justify-start xl:space-x-8">
+				<ul class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 xl:justify-start">
+					<li>
+						<a href="{{url('/')}}" title="" class="text-sm text-black transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80">
+							Home
+						</a>
+					</li>
+					<li>
+						<a href="{{url('/themes')}}" title="" class="text-sm text-black transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80">
+							Thema's en dossiers
+						</a>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+</foot>

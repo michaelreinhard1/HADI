@@ -1,0 +1,8 @@
+description: 'Future teachers create and add teaching materials'
+handle: students
+name: Students
+permissions:
+  - 'createentries:44aee174-7f3e-4ebb-a846-0b2843a3f671' # Article
+  - 'deleteentries:44aee174-7f3e-4ebb-a846-0b2843a3f671' # Article
+  - 'saveentries:44aee174-7f3e-4ebb-a846-0b2843a3f671' # Article
+  - 'viewentries:44aee174-7f3e-4ebb-a846-0b2843a3f671' # Article

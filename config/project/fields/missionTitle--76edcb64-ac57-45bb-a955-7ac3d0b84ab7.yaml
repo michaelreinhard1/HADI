@@ -1,0 +1,19 @@
+columnSuffix: kbqtnxpv
+contentColumnType: text
+fieldGroup: 0c8cff9f-0e71-4f85-a556-49c8f84de228 # Mission
+handle: missionTitle
+instructions: null
+name: 'Mission Title'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

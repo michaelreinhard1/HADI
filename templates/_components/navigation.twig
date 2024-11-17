@@ -1,0 +1,241 @@
+{% set user = craft.app.user %}
+
+{% set admin = false %}
+{% set student = false %}
+{% set reader = false %}
+{% set guest = false %}
+
+{% if not currentUser %}
+	{% set guest = true %}
+	{% set header = null %}
+{% elseif currentUser.admin or currentUser.isInGroup('administrators') %}
+	{% set header = headerStudent.menu.all() %}
+	{% set admin = true %}
+{% elseif currentUser.isInGroup('students') %}
+	{% set header = headerStudent.menu.all() %}
+	{% set student = true %}
+{% elseif currentUser.isInGroup('readers') %}
+	{% set header = headerReader.menu.all() %}
+	{% set reader = true %}
+{% endif %}
+
+{% set menuItems = header %}
+
+<header>
+	<nav class="bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200 text-md">
+		<div class="border-b border-gray-200">
+			<div class="container flex items-center justify-between mx-auto h-16">
+				<div class="flex">
+					<div class="lg:hidden">
+						<button class="navbar-burger flex items-center text-blue-600 p-3">
+							<svg class="block h-4 w-4 fill-current" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+								<title>Mobile menu</title>
+								<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+							</svg>
+						</button>
+					</div>
+
+					<a href="{{ url('/') }}" class="flex items-center">
+						{% if craft.rebrand.isLogoUploaded %}
+							<img src="{{ craft.rebrand.logo.url }}" alt="Logo" class="w-16 mr-2">
+						{% else %}
+							<span class="self-center text-xl font-semibold whitespace-nowrap font-extrabold">
+								{{ siteName }}
+							</span>
+						{% endif %}
+					</a>
+
+					{% if not guest %}
+						<div class="ml-4 w-96">
+							{% include "_partials/search" %}
+						</div>
+					{% endif %}
+				</div>
+				<div class="md:flex items-center gap-4 hidden">
+
+					{% if guest %}
+						<a href="{{ url('/register') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-md transition-all">Toegang aanvragen</a>
+						<a href="{{ url('/login') }}" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded-md transition-all">Login</a>
+					{% endif %}
+
+					{% if admin or student %}
+						<a
+							href="{{ url('/upload') }}" class="bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center text-white transition-all flex items-center gap-2">
+							{# Upload cloud icon svg #}
+
+							<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload-cloud w-4 h-4">
+								<polyline points="16 16 12 12 8 16"></polyline>
+								<line x1="12" y1="12" x2="12" y2="21"></line>
+								<path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+								<polyline points="16 16 12 12 8 16"></polyline>
+							</svg>
+							Upload</a>
+
+
+					{% endif %}
+					{% if admin or student or reader %}
+						{% include "_partials/profile-dropdown" %}
+					{% endif %}
+				</div>
+
+			</div>
+		</div>
+		{% if not guest %}
+
+			<div class="bg-gray-50 flex items-center hidden md:block">
+				<div class="container flex items-center justify-between mx-auto h-12 py-8">
+
+					<div class="flex">
+
+						<div class="items-center justify-between hidden w-full md:flex md:w-auto" id="navbar-sticky">
+							<ul class="flex flex-col  rounded-lg md:flex-row md:space-x-8 md:mt-0 md:font-medium md:border-0">
+
+								{% for menuItem in menuItems %}
+
+									{% set destination = menuItem.destination.one() %}
+
+									{% set activeLink = (craft.app.request.segments|first == destination.uri or (craft.app.request.segments|first == false and destination.slug == 'home')) %}
+
+									{% if destination.slug is not same as ('login') and destination.slug is not same as ('register') and destination.slug is not same as ('home') and destination.slug is not same as ('upload')%}
+
+										<li>
+											<a href="{{ destination.url }}" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 font-bold {{ activeLink ? 'text-blue-700 ' : ''}}">
+												{{ menuItem.label }}
+											</a>
+										</li>
+
+									{% endif %}
+
+								{% endfor %}
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		{% endif %}
+		<div class="navbar-menu relative z-50 hidden">
+			<div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+			<nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+				<div class="flex items-center mb-8">
+					<a class="mr-auto text-3xl font-bold leading-none" href="#">
+						{% if craft.rebrand.isLogoUploaded %}
+							<img src="{{ craft.rebrand.logo.url }}" alt="Logo" class="w-10 mr-2">
+						{% else %}
+							<span class="self-center text-xl font-semibold whitespace-nowrap font-extrabold">
+								{{ siteName }}
+							</span>
+						{% endif %}
+					</a>
+					<button class="navbar-close">
+						<svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+						</svg>
+					</button>
+				</div>
+				<div>
+					<ul>
+						{% if not guest %}
+							{% for menuItem in menuItems %}
+
+								{% set destination = menuItem.destination.one() %}
+
+								{% set activeLink = (craft.app.request.segments|first == destination.uri or (craft.app.request.segments|first == false and destination.slug == 'home')) %}
+
+								{% if destination.slug is not same as ('login') and destination.slug is not same as ('register') and destination.slug is not same as ('home') and destination.slug is not same as ('upload')%}
+
+									<li class="mb-1">
+										<a href="{{ destination.url }}" class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded {{ activeLink ? 'bg-blue-50 text-blue-600' : ''}}">
+											{{ menuItem.label }}
+										</a>
+									</li>
+
+								{% endif %}
+
+							{% endfor %}
+							<li class="mb-1">
+								<a href="{{ url('profile') }}" class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded ">
+									Profiel
+								</a>
+							</li>
+							{% if currentUser.admin %}
+								<li class="mb-1">
+									<a href="{{ url('admin') }}" class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded ">
+										Dashboard
+									</a>
+								</li>
+							{% endif %}
+						{% endif %}
+
+					</ul>
+				</div>
+				<div class="mt-auto">
+					<div class="pt-6">
+						{% if guest %}
+							<a href="{{ url('/register') }}" class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-gray-50 hover:bg-gray-100 rounded-xl">Toegang aanvragen</a>
+							<a href="{{ url('/login') }}" class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-blue-500 hover:bg-blue-100 rounded-xl">Login</a>
+						{% else %}
+							<form method="post" accept-charset="UTF-8" class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-red-100 hover:bg-red-200 rounded-xl">
+								{{ csrfInput() }}
+								{{ actionInput('users/logout') }}
+								{{ hiddenInput('userId', user.id) }}
+								<button type="submit" class="">
+									{{ 'Log uit'|t }}
+								</button>
+							</form>
+						{% endif %}
+
+					</div>
+					<p class="my-4 text-xs text-center text-gray-400">
+						<span>Copyright ©
+							{{ now|date('Y') }}
+							{{ siteName }}</span>
+					</p>
+				</div>
+			</nav>
+		</div>
+
+	</nav>
+</header>
+<script>
+	// Burger menus
+document.addEventListener('DOMContentLoaded', function () { // open
+const burger = document.querySelectorAll('.navbar-burger');
+const menu = document.querySelectorAll('.navbar-menu');
+
+if (burger.length && menu.length) {
+for (var i = 0; i < burger.length; i++) {
+burger[i].addEventListener('click', function () {
+for (var j = 0; j < menu.length; j++) {
+menu[j].classList.toggle('hidden');
+}
+});
+}
+}
+
+// close
+const close = document.querySelectorAll('.navbar-close');
+const backdrop = document.querySelectorAll('.navbar-backdrop');
+
+if (close.length) {
+for (var i = 0; i < close.length; i++) {
+close[i].addEventListener('click', function () {
+for (var j = 0; j < menu.length; j++) {
+menu[j].classList.toggle('hidden');
+}
+});
+}
+}
+
+if (backdrop.length) {
+for (var i = 0; i < backdrop.length; i++) {
+backdrop[i].addEventListener('click', function () {
+for (var j = 0; j < menu.length; j++) {
+menu[j].classList.toggle('hidden');
+}
+});
+}
+}
+});
+</script>

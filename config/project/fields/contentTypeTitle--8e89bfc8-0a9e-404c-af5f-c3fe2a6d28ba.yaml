@@ -1,0 +1,19 @@
+columnSuffix: bmmlgffh
+contentColumnType: text
+fieldGroup: 2c8d0883-eb20-49d4-97e0-f2951a3aa9cb # Categories
+handle: contentTypeTitle
+instructions: null
+name: 'Content Type Title'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

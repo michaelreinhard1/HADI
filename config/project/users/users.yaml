@@ -1,0 +1,9 @@
+allowPublicRegistration: true
+deactivateByDefault: true
+defaultGroup: 206700cc-0e8b-40af-a8a5-6ae491439cea # Readers
+fieldLayouts:
+  45cf1c2e-336d-4845-b4bb-24b97e21ec45: null
+photoSubpath: null
+photoVolumeUid: null
+requireEmailVerification: false
+validateOnPublicRegistration: true

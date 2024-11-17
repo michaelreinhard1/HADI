@@ -1,0 +1,61 @@
+fieldLayouts:
+  1f861d09-34d9-4520-b6fb-a6a493f50d6d:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: d6473f6c-df4d-43ce-ac26-6dea9e6c976a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: Login
+            type: craft\fieldlayoutelements\Heading
+            uid: 660d3114-f72e-45a6-83be-5263a2a57680
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: a91d099e-b6fb-4970-b320-bb754c515fd2 # Login
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 654367f8-8fa1-4716-b4c1-ee73e35db9c8
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhoud
+        uid: 37f1a2e8-a039-4793-9d0a-bee214ce58d2
+        userCondition: null
+handle: login
+hasTitleField: true
+name: Login
+section: a543bddb-366c-4a10-9ac3-5886a28a55a6 # Login
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

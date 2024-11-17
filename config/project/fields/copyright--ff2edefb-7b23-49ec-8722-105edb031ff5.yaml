@@ -1,0 +1,19 @@
+columnSuffix: eeumponf
+contentColumnType: text
+fieldGroup: a2721472-5a54-4d30-b1e3-fcca807c117c # Footer
+handle: copyright
+instructions: null
+name: Copyright
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

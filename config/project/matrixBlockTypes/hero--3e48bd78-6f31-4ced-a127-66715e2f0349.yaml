@@ -1,0 +1,216 @@
+field: 517e858f-2f9d-43d0-bf99-59c2e646a41a # Hero
+fieldLayouts:
+  ea4fd568-2dfd-4d7b-8e88-5152b9a9ab55:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: f431dc5a-5811-4a28-9fb4-99a491e186b0 # Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b1468803-bac9-41a4-af13-6b0faecb16bc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 2a4112f1-31a0-4cca-bd0f-498fcf2d24ef # Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8969920f-ff35-4685-a089-1758f0b4af65
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b12a7bfb-1b71-421b-a93f-fe212e38027a # Image
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6d010fc7-cb9a-47e1-a9a7-7297f8419f62
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 81a33e05-6a4c-4bc6-bef1-5eb86d00eb02 # Button Link
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c741eec4-6e87-4162-9e3a-48aee8f7ff28
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 0b24fe50-2f09-441a-9623-808c2d9d6a3a # Button Text
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 814bddb2-1fc3-46a2-9e05-3d79ec7452a3
+            userCondition: null
+            warning: null
+            width: 50
+        name: Content
+        uid: bf7dc7b2-fe9e-4077-8917-2703596b0128
+        userCondition: null
+fields:
+  0b24fe50-2f09-441a-9623-808c2d9d6a3a: # Button Text
+    columnSuffix: hiwvqcdw
+    contentColumnType: text
+    fieldGroup: null
+    handle: heroButtonText
+    instructions: null
+    name: 'Button Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  2a4112f1-31a0-4cca-bd0f-498fcf2d24ef: # Description
+    columnSuffix: oyqszzzx
+    contentColumnType: text
+    fieldGroup: null
+    handle: heroDescription
+    instructions: null
+    name: Description
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 2
+      multiline: true
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  81a33e05-6a4c-4bc6-bef1-5eb86d00eb02: # Button Link
+    columnSuffix: txdtagjk
+    contentColumnType: string
+    fieldGroup: null
+    handle: heroButtonLink
+    instructions: null
+    name: 'Button Link'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      localizeRelations: false
+      maxRelations: 1
+      minRelations: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Entry
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\entries\EntryCondition
+      selectionLabel: null
+      showSiteMenu: true
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  b12a7bfb-1b71-421b-a93f-fe212e38027a: # Image
+    columnSuffix: tuglkcws
+    contentColumnType: string
+    fieldGroup: null
+    handle: heroImage
+    instructions: null
+    name: Image
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:8643c5fb-00e9-456f-bdee-7e89d6e5952b' # Uploads
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maxRelations: 1
+      minRelations: null
+      previewMode: full
+      restrictFiles: true
+      restrictLocation: true
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:8643c5fb-00e9-456f-bdee-7e89d6e5952b' # Uploads
+      restrictedLocationSubpath: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Asset
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\assets\AssetCondition
+      selectionLabel: null
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  f431dc5a-5811-4a28-9fb4-99a491e186b0: # Title
+    columnSuffix: zvjbhutv
+    contentColumnType: text
+    fieldGroup: null
+    handle: heroTitle
+    instructions: null
+    name: Title
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: hero
+name: Hero
+sortOrder: 1

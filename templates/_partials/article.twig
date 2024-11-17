@@ -1,0 +1,37 @@
+{% if article.image.one() is null %}
+	{% set image = craft.assets.filename('image-placeholder.webp').one() %}
+	{% set image = image.getUrl() %}
+{% else %}
+	{% set image = article.image.one().getUrl() %}
+{% endif %}
+
+<div class="max-w-md rounded overflow-hidden shadow-md hover:shadow-lg transition-all rounded-xl relative	">
+	<a href="{{article.url()}}" class="h-full w-full absolute"></a>
+	<img src="{{ image }}" class="w-full h-44 object-cover hover:opacity-75 transition-all" alt="{{ article.title }}">
+	<div class="px-6 py-4">
+		<div class="font-bold text-xl mb-2">{{ article.title }}</div>
+		<p class="text-gray-700 text-base">
+			{{ article.body|striptags|slice(0, 200) ~ '...' }}
+		</p>
+		<p class="text-gray-400 text-sm mt-4">
+			{{ article.postDate|date('d/m/Y') }}
+		</p>
+	</div>
+
+	<div class="px-6 pt-4">
+		{% for category in article.themes.all() %}
+			<a class="inline-block bg-white rounded-full px-3 py-1 text-md font-semibold text-gray-700 mr-2 mb-2 trans flex justify-center items-center w-fit shadow-lg hover:shadow-xl transition-all relative" href="{{ category.url() }} ">
+				<img src="{{ category.image.one().getUrl() }}" alt="{{ category.title }}" class="w-4 h-4 mr-1 inline-block">
+				{{ category.title }}
+			</a>
+		{% endfor %}
+	</div>
+	<div class="px-6 pt-4 pb-2">
+		{% for contentType in article.contentType.all() %}
+			<a class="inline-block bg-white rounded-full px-3 py-1 text-md font-semibold text-gray-700 mr-2 mb-2 trans flex justify-center items-center w-fit shadow-lg hover:shadow-xl transition-all relative" href="{{ contentType.url() }} ">
+				<img src="{{ contentType.image.one().getUrl() }}" alt="{{ contentType.title }}" class="w-4 h-4 mr-1 inline-block">
+				{{ contentType.title }}
+			</a>
+		{% endfor %}
+	</div>
+</div>

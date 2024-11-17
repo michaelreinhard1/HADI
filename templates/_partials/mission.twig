@@ -1,0 +1,23 @@
+<div class="container leading-7 mx-auto md:flex  justify-center my-5 md:my-20 md:mt-32 gap-x-28 {{flexClass ?? ''}}">
+	<div class="md:w-1/2">
+		<h3 class="md:text-4xl font-bold mb-4 leading-normal text-xl">
+			{{heading ?? 'Heading'}}
+		</h3>
+		<div>
+			{{description ?? 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod.'}}
+		</div>
+		{% if (link) %}
+			<a href="{{link}}" class="text-blue-500 my-4 inline-block font-bold underline hover:text-blue-700 transition duration-200">
+				{{linkText ?? 'Button'}}
+			</a>
+		{% endif %}
+	</div>
+	<div class="md:w-1/2 w-full mt-5 md:mt-0">
+		{% if (image) %}
+			<img src="{{image.getUrl() ?? 'https://picsum.photos/200'}}" alt="image" class="w-full rounded-2xl shadow-xl">
+		{% else %}
+			{% set image = craft.assets.filename('image-placeholder.webp').one() %}
+			<img src="{{ image.getUrl() }}" alt="{{ image.title }}" class="w-full rounded-2xl shadow-xl">
+		{% endif %}
+	</div>
+</div>

@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+handle: article
+name: Article
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  de9adf7f-6fe6-4483-b882-eed90f12fddf: # HADI
+    enabledByDefault: true
+    hasUrls: true
+    template: article/_entry
+    uriFormat: 'article/{slug}'
+structure:
+  maxLevels: null
+  uid: bee8f810-63c9-48b8-bb02-f8cdffe1c249
+type: structure

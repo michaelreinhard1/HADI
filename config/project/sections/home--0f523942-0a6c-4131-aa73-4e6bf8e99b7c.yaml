@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: home
+name: Home
+propagationMethod: all
+siteSettings:
+  de9adf7f-6fe6-4483-b882-eed90f12fddf: # HADI
+    enabledByDefault: true
+    hasUrls: true
+    template: _pages/home
+    uriFormat: __home__
+type: single

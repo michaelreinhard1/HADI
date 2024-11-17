@@ -1,0 +1,14 @@
+columnSuffix: tbaytwyc
+contentColumnType: string(255)
+fieldGroup: b729ebe4-ef74-47c4-9328-0b9b0356859c # Common
+handle: googleSlides
+instructions: null
+name: 'Google slides'
+searchable: false
+settings:
+  maxLength: 255
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

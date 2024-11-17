@@ -1,0 +1,70 @@
+defaultPlacement: end
+fieldLayouts:
+  a720d494-67a4-4954-9c1e-aac60c1a73de:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            uid: 4a16b85d-c753-42ed-ad89-220dd2440d34
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ebb7ab24-cf75-4119-9e14-c6c635f948c7 # Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e4a841c8-4a7f-42d7-b5cf-3d02bfd87b6e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0cd6dfa1-a6a0-4163-8256-ccc5067bc23c # Theme Type
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 038e17b2-b03f-4e62-a63e-91444ac3988a
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b5a2601b-36c0-4273-976a-ffb0aac2c482
+        userCondition: null
+handle: themes
+name: Themes
+siteSettings:
+  de9adf7f-6fe6-4483-b882-eed90f12fddf: # HADI
+    hasUrls: true
+    template: themes/_entry
+    uriFormat: 'themes/{slug}'
+structure:
+  maxLevels: null
+  uid: dd23af1a-bc86-4ddd-a28b-a968f6924029

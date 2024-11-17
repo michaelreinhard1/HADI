@@ -1,0 +1,39 @@
+{% extends "_layouts/base.twig" %}
+
+{% if currentUser %}
+	{% redirect '' %}
+{% endif %}
+
+{% block title %}
+	{{parent()}}
+	-
+	{{entry.title}}
+{% endblock %}
+
+{% block body %}
+
+	{% macro errorList(errors) %}
+		{% if errors %}
+			{{ ul(errors, {class: 'text-red-500 text-sm font-medium mt-4'}) }}
+		{% endif %}
+	{% endmacro %}
+
+	{# `user` is defined if the form returns validation errors. #}
+	{% set user = user ?? null %}
+
+	<section class="h-screen container grid place-items-center">
+		<div class="flex flex-col items-center justify-center md:px-6 py-8 mx-auto w-full">
+			<div class="md:w-1/2 w-full bg-white rounded-lg shadow mt-20 md:mt-0">
+				<div class="w-full mx-auto p-6 space-y-4 md:space-y-6 sm:p-8">
+					<h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
+						Toegang aanvragen
+					</h1>
+					{% include "_partials/form.twig" %}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% block footer %}{% endblock %}
+
+{% endblock %}

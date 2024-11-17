@@ -1,0 +1,89 @@
+{% extends "_layouts/base.twig" %}
+
+{% block title %}
+	{{parent()}}
+	-
+	{{entry.title}}
+{% endblock %}
+
+{% block spacer %}{% endblock %}
+
+{% block body %}
+
+	{% macro errorList(errors) %}
+		{% if errors %}
+			{{ ul(errors, {class: 'text-red-500 text-sm font-medium mt-4'}) }}
+		{% endif %}
+	{% endmacro %}
+
+	{% set login = entry.login.one() %}
+
+	<section class="h-screen container grid place-items-center">
+		<div class="flex flex-col items-center justify-center md:px-6 py-8 mx-auto w-full">
+			<div class="md:w-1/3 w-full bg-white rounded-lg shadow">
+				<div class="w-full mx-auto p-6 space-y-4 md:space-y-6 sm:p-8">
+					<h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
+						{{ login.loginTitle }}
+					</h1>
+					<form class="space-y-4 md:space-y-6" method="post" accept-charset="UTF-8">
+						{{ csrfInput() }}
+						{{ actionInput('users/login') }}
+
+						<div>
+							<label for="loginName" class="block mb-2 text-sm font-medium text-gray-900 ">
+								{{ login.loginEmailLabel }}
+							</label>
+							{{ input('text', 'loginName', null, {
+                        id: 'loginName',
+                        autocomplete: 'username',
+                        class: 'bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5',
+                        placeholder: login.loginEmailPlaceholder,
+                      }) }}
+						</div>
+						<div>
+							<label for="password" class="block mb-2 text-sm font-medium text-gray-900 ">
+								{{ login.loginPasswordLabel }}
+							</label>
+
+							{{ input('password', 'password', null, {
+                        id: 'password',
+                        class: 'bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5',
+                        placeholder: '••••••••',
+                      }) }}
+
+						</div>
+						<div class="flex items-center justify-between">
+							<a href="{{ url('reset-password') }}" class="text-sm font-medium text-blue-600 hover:underline">
+								{{ login.loginForgotPassword }}
+							</a>
+						</div>
+						{% if craft.app.session.hasFlash('error') %}
+							<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative text-sm" role="alert">
+								<span class="block sm:inline">
+									{% if errorMessage is defined %}
+										{{ errorMessage }}
+									{% else %}
+										{{ craft.app.session.getFlash('error') }}
+									{% endif %}
+								</span>
+							</div>
+						{% endif %}
+
+						<button type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  ">
+							{{ login.loginButton }}
+						</button>
+						<p class="text-sm font-light text-gray-500 ">
+							{{ login.loginRegisterText }}
+							<a href="{{ login.loginRegisterLink.one().url }}" class="text-blue-600 hover:underline">
+								{{ login.loginRegister }}
+							</a>
+						</p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% block footer %}{% endblock %}
+
+{% endblock %}

@@ -1,0 +1,107 @@
+description: ''
+handle: administrators
+name: Administrators
+permissions:
+  - accesssitewhensystemisoff
+  - administrateusers
+  - 'assignusergroup:206700cc-0e8b-40af-a8a5-6ae491439cea' # Readers
+  - 'assignusergroup:c63fb602-dd40-4e61-939a-17a63d510957' # Administrators
+  - 'assignusergroup:db25ddee-b3b4-4771-aa7f-2989841d0e0b' # Students
+  - assignuserpermissions
+  - 'createentries:44aee174-7f3e-4ebb-a846-0b2843a3f671' # Article
+  - 'createfolders:8643c5fb-00e9-456f-bdee-7e89d6e5952b' # Uploads
+  - 'deleteassets:8643c5fb-00e9-456f-bdee-7e89d6e5952b' # Uploads
+  - 'deletecategories:452fd91b-e451-4de5-bd86-717ac4c9fa57' # Themes
+  - 'deletecategories:b2d16f76-a8d7-4947-9033-a6208d319529' # Content Type
+  - 'deletecategories:ecaf28c4-19fc-4e6b-87b3-4a258df131df' # Theme Type
+  - 'deleteentries:44aee174-7f3e-4ebb-a846-0b2843a3f671' # Article
+  - 'deletepeerassets:8643c5fb-00e9-456f-bdee-7e89d6e5952b' # Uploads
+  - 'deletepeercategorydrafts:452fd91b-e451-4de5-bd86-717ac4c9fa57' # Themes
+  - 'deletepeercategorydrafts:b2d16f76-a8d7-4947-9033-a6208d319529' # Content Type
+  - 'deletepeercategorydrafts:ecaf28c4-19fc-4e6b-87b3-4a258df131df' # Theme Type
+  - 'deletepeerentries:44aee174-7f3e-4ebb-a846-0b2843a3f671' # Article
+  - 'deletepeerentrydrafts:0f523942-0a6c-4131-aa73-4e6bf8e99b7c' # Home
+  - 'deletepeerentrydrafts:120072da-8bbd-401b-b061-021b5cb16536' # My Articles
+  - 'deletepeerentrydrafts:15701697-5014-41ec-b0db-6f8f9be88ce8' # Theological Themes
+  - 'deletepeerentrydrafts:3a5a81b7-b08f-445f-b7b1-147db25b2321' # Register
+  - 'deletepeerentrydrafts:44aee174-7f3e-4ebb-a846-0b2843a3f671' # Article
+  - 'deletepeerentrydrafts:4c0be0c3-a64e-4787-85a6-c7308f8a9a08' # Reset Password
+  - 'deletepeerentrydrafts:8c363541-4c0c-44d4-bd64-ac06090b04e9' # Themes
+  - 'deletepeerentrydrafts:a543bddb-366c-4a10-9ac3-5886a28a55a6' # Login
+  - 'deletepeerentrydrafts:b1a02b8d-afc1-497a-9d65-4aa04a261771' # Upload
+  - 'deletepeerentrydrafts:b3e8fa6e-0729-4be7-8b0b-5605c112d8d9' # Profile
+  - 'deletepeerentrydrafts:db5dbdf1-3ffa-4332-9147-e55f62279272' # Upload add navigation
+  - deleteusers
+  - 'editglobalset:4ac7cdc0-4143-463d-bfcf-5f5a2e6804d6' # Header Reader
+  - 'editglobalset:c46ba9dd-35c7-402e-879d-61774c13275d' # Footer
+  - 'editglobalset:cd4006c9-3b5f-4ff9-a9cb-08057ee6d590' # Header Student
+  - 'editimages:8643c5fb-00e9-456f-bdee-7e89d6e5952b' # Uploads
+  - 'editpeerimages:8643c5fb-00e9-456f-bdee-7e89d6e5952b' # Uploads
+  - editusers
+  - impersonateusers
+  - moderateusers
+  - registerusers
+  - 'replacefiles:8643c5fb-00e9-456f-bdee-7e89d6e5952b' # Uploads
+  - 'replacepeerfiles:8643c5fb-00e9-456f-bdee-7e89d6e5952b' # Uploads
+  - 'saveassets:8643c5fb-00e9-456f-bdee-7e89d6e5952b' # Uploads
+  - 'savecategories:452fd91b-e451-4de5-bd86-717ac4c9fa57' # Themes
+  - 'savecategories:b2d16f76-a8d7-4947-9033-a6208d319529' # Content Type
+  - 'savecategories:ecaf28c4-19fc-4e6b-87b3-4a258df131df' # Theme Type
+  - 'saveentries:0f523942-0a6c-4131-aa73-4e6bf8e99b7c' # Home
+  - 'saveentries:120072da-8bbd-401b-b061-021b5cb16536' # My Articles
+  - 'saveentries:15701697-5014-41ec-b0db-6f8f9be88ce8' # Theological Themes
+  - 'saveentries:3a5a81b7-b08f-445f-b7b1-147db25b2321' # Register
+  - 'saveentries:44aee174-7f3e-4ebb-a846-0b2843a3f671' # Article
+  - 'saveentries:4c0be0c3-a64e-4787-85a6-c7308f8a9a08' # Reset Password
+  - 'saveentries:8c363541-4c0c-44d4-bd64-ac06090b04e9' # Themes
+  - 'saveentries:a543bddb-366c-4a10-9ac3-5886a28a55a6' # Login
+  - 'saveentries:b1a02b8d-afc1-497a-9d65-4aa04a261771' # Upload
+  - 'saveentries:b3e8fa6e-0729-4be7-8b0b-5605c112d8d9' # Profile
+  - 'saveentries:db5dbdf1-3ffa-4332-9147-e55f62279272' # Upload add navigation
+  - 'savepeerassets:8643c5fb-00e9-456f-bdee-7e89d6e5952b' # Uploads
+  - 'savepeercategorydrafts:452fd91b-e451-4de5-bd86-717ac4c9fa57' # Themes
+  - 'savepeercategorydrafts:b2d16f76-a8d7-4947-9033-a6208d319529' # Content Type
+  - 'savepeercategorydrafts:ecaf28c4-19fc-4e6b-87b3-4a258df131df' # Theme Type
+  - 'savepeerentries:44aee174-7f3e-4ebb-a846-0b2843a3f671' # Article
+  - 'savepeerentrydrafts:0f523942-0a6c-4131-aa73-4e6bf8e99b7c' # Home
+  - 'savepeerentrydrafts:120072da-8bbd-401b-b061-021b5cb16536' # My Articles
+  - 'savepeerentrydrafts:15701697-5014-41ec-b0db-6f8f9be88ce8' # Theological Themes
+  - 'savepeerentrydrafts:3a5a81b7-b08f-445f-b7b1-147db25b2321' # Register
+  - 'savepeerentrydrafts:44aee174-7f3e-4ebb-a846-0b2843a3f671' # Article
+  - 'savepeerentrydrafts:4c0be0c3-a64e-4787-85a6-c7308f8a9a08' # Reset Password
+  - 'savepeerentrydrafts:8c363541-4c0c-44d4-bd64-ac06090b04e9' # Themes
+  - 'savepeerentrydrafts:a543bddb-366c-4a10-9ac3-5886a28a55a6' # Login
+  - 'savepeerentrydrafts:b1a02b8d-afc1-497a-9d65-4aa04a261771' # Upload
+  - 'savepeerentrydrafts:b3e8fa6e-0729-4be7-8b0b-5605c112d8d9' # Profile
+  - 'savepeerentrydrafts:db5dbdf1-3ffa-4332-9147-e55f62279272' # Upload add navigation
+  - 'viewassets:8643c5fb-00e9-456f-bdee-7e89d6e5952b' # Uploads
+  - 'viewcategories:452fd91b-e451-4de5-bd86-717ac4c9fa57' # Themes
+  - 'viewcategories:b2d16f76-a8d7-4947-9033-a6208d319529' # Content Type
+  - 'viewcategories:ecaf28c4-19fc-4e6b-87b3-4a258df131df' # Theme Type
+  - 'viewentries:0f523942-0a6c-4131-aa73-4e6bf8e99b7c' # Home
+  - 'viewentries:120072da-8bbd-401b-b061-021b5cb16536' # My Articles
+  - 'viewentries:15701697-5014-41ec-b0db-6f8f9be88ce8' # Theological Themes
+  - 'viewentries:3a5a81b7-b08f-445f-b7b1-147db25b2321' # Register
+  - 'viewentries:44aee174-7f3e-4ebb-a846-0b2843a3f671' # Article
+  - 'viewentries:4c0be0c3-a64e-4787-85a6-c7308f8a9a08' # Reset Password
+  - 'viewentries:8c363541-4c0c-44d4-bd64-ac06090b04e9' # Themes
+  - 'viewentries:a543bddb-366c-4a10-9ac3-5886a28a55a6' # Login
+  - 'viewentries:b1a02b8d-afc1-497a-9d65-4aa04a261771' # Upload
+  - 'viewentries:b3e8fa6e-0729-4be7-8b0b-5605c112d8d9' # Profile
+  - 'viewentries:db5dbdf1-3ffa-4332-9147-e55f62279272' # Upload add navigation
+  - 'viewpeerassets:8643c5fb-00e9-456f-bdee-7e89d6e5952b' # Uploads
+  - 'viewpeercategorydrafts:452fd91b-e451-4de5-bd86-717ac4c9fa57' # Themes
+  - 'viewpeercategorydrafts:b2d16f76-a8d7-4947-9033-a6208d319529' # Content Type
+  - 'viewpeercategorydrafts:ecaf28c4-19fc-4e6b-87b3-4a258df131df' # Theme Type
+  - 'viewpeerentries:44aee174-7f3e-4ebb-a846-0b2843a3f671' # Article
+  - 'viewpeerentrydrafts:0f523942-0a6c-4131-aa73-4e6bf8e99b7c' # Home
+  - 'viewpeerentrydrafts:120072da-8bbd-401b-b061-021b5cb16536' # My Articles
+  - 'viewpeerentrydrafts:15701697-5014-41ec-b0db-6f8f9be88ce8' # Theological Themes
+  - 'viewpeerentrydrafts:3a5a81b7-b08f-445f-b7b1-147db25b2321' # Register
+  - 'viewpeerentrydrafts:44aee174-7f3e-4ebb-a846-0b2843a3f671' # Article
+  - 'viewpeerentrydrafts:4c0be0c3-a64e-4787-85a6-c7308f8a9a08' # Reset Password
+  - 'viewpeerentrydrafts:8c363541-4c0c-44d4-bd64-ac06090b04e9' # Themes
+  - 'viewpeerentrydrafts:a543bddb-366c-4a10-9ac3-5886a28a55a6' # Login
+  - 'viewpeerentrydrafts:b1a02b8d-afc1-497a-9d65-4aa04a261771' # Upload
+  - 'viewpeerentrydrafts:b3e8fa6e-0729-4be7-8b0b-5605c112d8d9' # Profile
+  - 'viewpeerentrydrafts:db5dbdf1-3ffa-4332-9147-e55f62279272' # Upload add navigation

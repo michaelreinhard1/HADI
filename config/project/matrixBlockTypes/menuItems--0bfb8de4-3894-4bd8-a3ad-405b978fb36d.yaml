@@ -1,0 +1,92 @@
+field: 50ad4dca-03ff-4766-8587-82cedb2c8737 # Menu
+fieldLayouts:
+  89531854-36b0-4b62-baaf-03e9353f31e5:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 81a5a36e-204f-411d-bf8b-350125721be3 # Destination
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b52c2a44-b244-4617-b8b7-ab2892e7df2e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b0c6aaec-0ae0-46dd-b41f-12d5f272b494 # Label
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fd37d4ac-5a26-4260-8986-9bdb7fe96091
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 2477b16a-9d44-4baf-baa6-4f1c3235df2d
+        userCondition: null
+fields:
+  81a5a36e-204f-411d-bf8b-350125721be3: # Destination
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: destination
+    instructions: null
+    name: Destination
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      localizeRelations: false
+      maxRelations: 1
+      minRelations: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Entry
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\entries\EntryCondition
+      selectionLabel: null
+      showSiteMenu: true
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  b0c6aaec-0ae0-46dd-b41f-12d5f272b494: # Label
+    columnSuffix: nqaywklu
+    contentColumnType: string(80)
+    fieldGroup: null
+    handle: label
+    instructions: null
+    name: Label
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: 20
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: menuItems
+name: 'Menu Items'
+sortOrder: 1

@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: b729ebe4-ef74-47c4-9328-0b9b0356859c # Common
+handle: hero
+instructions: null
+name: Hero
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_hero}}'
+  maxBlocks: 1
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix
