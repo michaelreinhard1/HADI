@@ -23,13 +23,13 @@ An online platform for Islamic teachers where they can find and add resources fo
 Clone the project
 
 ```bash
-  git clone https://github.com/cms-development/werkstuk---edu-platform-michaelreinhard1
+  git clone https://github.com/michaelreinhard1/HADI.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd werkstuk---edu-platform-michaelreinhard1
+  cd HADI
 ```
 
 Install dependencies
